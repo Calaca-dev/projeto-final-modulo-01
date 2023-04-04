@@ -9,13 +9,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 
+body {
+    background-color: #E5E5E5;  
+}
+
 #father-div-reposivite{
     width: 100vw;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #E5E5E5;
+    background-image: url(../img/logo-wexer-background.png);
+    background-repeat: no-repeat;
     
     
 }
