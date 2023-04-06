@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+  }
+  
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Poppins:ital@1&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+
+  #htmlBody{
+    background-color: #E5E5E5;  
+  }
+.subscribeCard {
+    width: 32.625em;
+    height: auto;
+    box-shadow: 0px 4px 30px 0px #0000001A;
+    background: #ffffff;
+    border-radius: 16px;
+}
+
+.imgSubscribePage {
+    margin: 1.875em;
+}
+
+#formTxtApresentacion>h1,#formTxtApresentacion>p {
+    color: #00995D;
+    font-size: 1em;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    justify-content: center;
+}
+
+#formTxtApresentacion {
+    margin-bottom:1.625em;
+    
+}
+
+.divInputs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+.inputStyleSubscribe {
+    all: unset;
+    width: 23.69em;
+    height: 2.995em;
+    border: 1px solid #BDBDBD;
+    border-radius: 8px;    
+    margin-bottom: 1.125em;
+}
+
+
+
+.btnShowInputPasssword {
+    all: unset;
+    background-color: #00995D;
+    border-radius:8px ;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    width: 12em;
+    height: 3em;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 1em;
+    font-weight: 700;
+    margin-top:1.0625em;
+    margin-bottom: 2.52em;
+    cursor: pointer;
+
+}
+.btnAlign {
+ margin-left: 190px;
+}
+.btnIcon {
+    font-size: 1.2em;
+}
+
+
+
+.labelStyle{
+    all: unset;
+    color:black;
+    position: relative;
+    margin-right: 20em;
+    margin-bottom:  0.3125em;
+    
+}
+
