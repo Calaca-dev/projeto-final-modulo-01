@@ -14,29 +14,32 @@
   }
 .subscribeCard {
     width: 32.625em;
-    height: auto;
+    height: fit-content;
     box-shadow: 0px 4px 30px 0px #0000001A;
     background: #ffffff;
     border-radius: 16px;
+    
+
 }
 
 .imgSubscribePage {
     margin: 1.875em;
 }
 
-#formTxtApresentacion>h1,#formTxtApresentacion>p {
+.formTxtApresentacion>h1,.formTxtApresentacion>p {
     color: #00995D;
     font-size: 1em;
     font-family: 'Montserrat', sans-serif;
     display: flex;
     justify-content: center;
+    margin-bottom: 0.38em;
 }
 
-#formTxtApresentacion {
+
+.formTxtApresentacion{
     margin-bottom:1.625em;
-    
 }
-
+ 
 .divInputs {
     display: flex;
     flex-direction: column;
@@ -72,11 +75,17 @@
     margin-top:1.0625em;
     margin-bottom: 2.52em;
     cursor: pointer;
+    box-shadow: 0px 4px 2px 0px #00000026;
+}
+.btnAlignOne {
+    width: 23.69em;
+    height: fit-content;
+    display: flex;
+    justify-content: flex-end;
+    
+    
+}
 
-}
-.btnAlign {
- margin-left: 190px;
-}
 .btnIcon {
     font-size: 1.2em;
 }
@@ -88,7 +97,75 @@
     color:black;
     position: relative;
     margin-right: 20em;
-    margin-bottom:  0.3125em;
+    margin-bottom:0.3125em;
+    margin-left: 4.5em;
     
 }
 
+/* style do card Senha */
+
+.cardPasssword {
+    width: 32.625em;
+    height: auto;
+    box-shadow: 0px 4px 30px 0px #0000001A;
+    background: #ffffff;
+    border-radius: 16px;
+    display: none;
+    
+}
+
+label {
+    all: unset;
+    color:black;
+}
+
+.alignLabel {
+    width: 23.69em;
+    height: fit-content;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.alignContent {
+    width: 6.86em;
+    height: fit-content;
+}
+
+.btnAlignTwo {
+    width: 28.5em;
+    height: fit-content;
+    display: flex;
+    justify-content: flex-end;
+    
+    
+}
+.asteriskStyle {
+    color: #EB5757;
+    font-size: 0.5em;
+}
+
+.pswordTxt {
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+    margin-bottom: 2.3125em;
+}
+
+ .howToCreatePsword{
+    width: 21.25em;
+    height: fit-content;
+    font-size: 0.875em;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    color: #6F6F6E;
+}
+
+.inputContent {
+    margin-left: 4.5em;
+}
+.gap {
+    margin-bottom: 4em;
+}
