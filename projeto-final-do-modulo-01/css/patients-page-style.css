@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Poppins:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+
+.wraper {
+    background-color: #E5E5E5; 
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+header {
+    width: 100vw;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 4px 10px 0px #0000001A;
+
+
+}
+.logoHeader {
+    width: 5em;
+    height: 5.046875em;
+    box-shadow: 0px 4px 20px 0px #0000001A;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.idUser {
+    color: #017849;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+.spaceIcon{
+    margin-right: 1em;
+    font-weight: 700;
+
+}
+.arrowStyle {
+    color: black;
+    
+}
+
+.spaceHeader {
+    width: 100vw;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 1.875em;
+}
+.subscribeAndSearch {
+  width: 66em;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 3em;
+
+}
+
+.subscribeBtn{
+    all: unset;
+    width: 12.3125em;
+    height: 3.25em;
+    color: white;
+    background-color: #017849;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.625em;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;  
+    cursor: pointer;
+}
+.btnSubStyle {
+    font-size: 1.25em;
+}
+
+.searchArea {
+    display: flex;
+    justify-content: center;
+    
+}
+.inputSearch {
+    all: unset;   
+    width: 23.6875em;
+    height: 2.9em;
+    border-radius: 30px 0px 0px 30px;
+    border: 1px solid #BDBDBD;      
+    
+}
+
+.inputSearch::placeholder {
+color: #828282;
+}
+
+.btnSearch {
+    all: unset;
+    width: 7.8125em;
+    color:white;
+    height: 3em;
+    background-color: #017849;
+    font-weight: 700;
+    font-family:'Montserrat', sans-serif;
+    border-radius: 0px 30px 30px 0px ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.625em;
+    cursor: pointer;
+    
+
+}
+
+
+.mainContent {
+    width: 80.25em;
+    height: 34.4375em;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 16px;
+    flex-direction: column;
+}
+
+table {
+    background-color: white;
+    border-spacing: 0;
+}
+td,th {
+    border: 1px solid #E0E0E0;
+    background-color: white;
+    
+ 
+}
+
+.txtStyleTableHeader {
+  color: #2F80ED;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1em;
+  font-weight: 400;
+
+}
+
+.MiddleCellStyle {
+    padding: 0.88125em 19.0625em 0.87125em 0.8125em;
+}
+.topCell {
+  width: 9.6225em;
+  padding: 0.88125em 0em 0.87125em 0.8125em;
+  
+  
+}
+.lastCellStyle {
+    padding: 0.766875em;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+.bordericonstyle {
+    width: 2em;
+    height:1.5em;
+    border: 1px solid black;
+    border-radius: 8px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     padding: 4px 8px 4px 8px;
+     cursor: pointer;
+     box-shadow: 0px 4px 2px 0px #00000026;
+
+}
+.flexIcons {
+     width: 6.25em;
+     height: fit-content;
+     display: flex;
+     gap: 1em;
+     
+}

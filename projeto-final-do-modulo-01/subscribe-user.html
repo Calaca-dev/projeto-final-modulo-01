@@ -29,13 +29,12 @@
 
                     <div class="alignLabel"><label for="userName">Nome</label></div>
 
-                    <input type="email" id="userName" class="inputStyleSubscribe"   placeholder="Coloque seu Nome"
-                        class="inputContent" id="spaceBtwInputs">
+                    <input type="email" id="userName" class="inputStyleSubscribe" placeholder="Coloque seu Nome" class="inputContent" id="spaceBtwInputs" required><!--por que o required tem esse comportamento! -->
 
 
                     <div class="alignLabel"><label for="email" class="">E-mail</label></div>
                     
-                    <input type="email" id="email" class="inputStyleSubscribe" placeholder="Coloque seu E-mail aqui">
+                    <input type="email" id="email" class="inputStyleSubscribe" placeholder="Coloque seu E-mail aqui" required>
 
                     <div class="btnAlignOne">
                         <button class="btnShowInputPasssword" onclick="changeInputs()">Proseguir
@@ -76,7 +75,7 @@
                                     <i class="fa-solid fa-arrow-right btnIcon"></i>
                                 </button>
                             </div>
-
+                            <!-- precisa alinhar mais para esquerda o conteiner abaixo -->
                             <div class="pswordTxt">
                                 <p class="howToCreatePsword"><sup><i class="fa-solid fa-asterisk asteriskStyle"></i></sup>Precisa no mínimo 8 digitos</p>
                                 <p class="howToCreatePsword"><sup><i class="fa-solid fa-asterisk asteriskStyle"></i></sup>Precisa conter um caractere especial */+.</p>
