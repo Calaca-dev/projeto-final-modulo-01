@@ -1,11 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Poppins:ital@1&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 * {
     margin: 0;
     padding: 0;
   outline: 0;
   box-sizing: border-box;
+}
+
+#fazendoModalTeste {
+    display: none;
 }
 
 .wraper {
@@ -15,7 +21,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    
+    flex-direction: column;
+      
 }
 
 header {
@@ -25,9 +32,25 @@ header {
     justify-content: center;
     align-items: center;
     box-shadow: 0px 4px 10px 0px #0000001A;
-
+    position: fixed;
+    z-index: 1;
 
 }
+div>#titlePage {
+    display: flex;
+    width:53em;
+    height: fit-content;
+    justify-content: flex-start;
+    margin-bottom: 0.5em;
+}
+#titlePage {
+    
+    font-size: 1.5em;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+    color: #4F4F4F;
+}
+
 .logoHeader {
     width: 5em;
     height: 5.046875em;
@@ -134,6 +157,7 @@ color: #828282;
     align-items: center;
     border-radius: 16px;
     flex-direction: column;
+    
 }
 
 table {
@@ -185,10 +209,123 @@ td,th {
      box-shadow: 0px 4px 2px 0px #00000026;
 
 }
+
+#greenBorder {
+    border: 1px solid #017849;
+}
+#blueBorder {
+    border: 1px solid #2F80ED;
+}
+#redBorder {
+    border: 1px solid #EB5757;
+}
+
 .flexIcons {
      width: 6.25em;
      height: fit-content;
      display: flex;
      gap: 1em;
      
+}
+
+.newSubscribeModal {
+    width: 68.3125em;
+    height: fit-content;
+    border-radius: 8px;
+    background-color: white;
+}
+.titleModal {
+    font-size: 1.5em;
+    font-family: 'Montserrat', sans-serif;
+    color:#00995D;
+
+}
+.topModal {
+    width: 68.3125em;
+    height: 2em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center ;
+    padding: 3em 2em 0em 2em;
+}
+.closeIconModal {
+    font-size: 1.5em;
+    cursor: pointer;
+}
+.formModal {
+    margin: 3em 2em 3em 0em;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.inputDivisionFlex {
+    width: 63em;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    margin-top: 2em;
+    gap: 1.5em;
+}
+
+.inputNewSubStyle {
+    width: 20.4375em;
+    height: 2.995em;
+    border-radius: 8px;
+    border: 1px solid #BDBDBD;
+}
+.txtModalAlert {
+    font-family: 'Poppins', sans-serif;
+    font-family: 400;
+    color: #616161;
+}
+.spaceBtw {
+    margin: 2em;
+}
+
+.btnSalveFlex {
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-weight: 700;
+    font-size: 1em;
+    gap: 1.5em;
+}
+
+.salveBtn {
+    all: unset;
+    width: 9.1875em;
+    height: 3em;
+    color: white;
+    background-color:#017849;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family:'Montserrat', sans-serif;
+    cursor: pointer;
+}
+
+.cancelBtn {
+    all: unset;
+    font-weight: 700;
+    font-family:'Montserrat', sans-serif;
+    color: #616161;
+    cursor: pointer;
+}
+
+.modalEndPart {
+width:68.3125em;
+height: fit-content;
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+align-items: center;
+flex-direction: row;
+padding: 1.5625em 2em 1.5em 2em;
+
+}
+.divisionLine {
+    width: 68.3125em;
+    border: 1px solid #E0E0E0;
 }
