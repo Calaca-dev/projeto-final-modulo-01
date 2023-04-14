@@ -65,219 +65,142 @@
             </div>
            
             <table>
+                
+
                 <thead>
                     <tr>
-                        <th class="txtStyleTableHeader">Código</th>
+                        <th class="txtStyleTableHeader topCell">Código</th>
                         <th class="txtStyleTableHeader MiddleCellStyle ">Nome</th>
                         <th class="txtStyleTableHeader MiddleCellStyle ">CPF</th>
-                        <th class="txtStyleTableHeader ">Ações</th>
+                        <th class="txtStyleTableHeader" id="tableThWidth">Ações</th>
                     </tr>
                 </thead>
-                <tr>
-                    <td class="topCell">teste</td>
-                    <td class="MiddleCellStyle">teste</td>
-                    <td class="MiddleCellStyle">teste</td>
-                    <!-- Onde está os icones da tabela de listagem de pacientes -->
-                    <td class="lastCellStyle">
-                        <div class="flexIcons">
-                            <figure class="bordericonstyle greenBorder"><img src="./img/calendar-icon.svg" alt="">
-                            </figure>
-                            <figure class="bordericonstyle blueBorder" ><img src="./img/pen-edit.svg" alt=""></figure>
-                            <figure class="bordericonstyle redBorder" ><img src="./img/trash-icon.svg" alt=""></figure>
-                        </div>
-                    </td>
-                </tr>
-                <tbody>
-                    <tr>
-                        <td class="topCell">teste</td>
-                        <td class="MiddleCellStyle">teste</td>
-                        <td class="MiddleCellStyle">teste</td>
-                        <!-- Onde está os icones da tabela de listagem de pacientes -->
-                        <td class="lastCellStyle">
-                            
-                            <div class="flexIcons">
-                                <figure  class="bordericonstyle greenBorder"><img src="./img/calendar-icon.svg" alt="">
-                                </figure>
-                                <figure class="bordericonstyle blueBorder"><img src="./img/pen-edit.svg" alt=""></figure>
-                                <figure class="bordericonstyle redBorder"><img src="./img/trash-icon.svg" alt="">
-                                </figure>
-                        </div>
-                        </td>
-        
-                    </tr>
-                    <tr>    
-                        <td class="topCell">teste</td>
-                        <td class="MiddleCellStyle">teste</td>
-                        <td class="MiddleCellStyle">teste</td>
-                        <!-- Onde está os icones da tabela de listagem de pacientes -->
-                        <td class="lastCellStyle">
-                           <div class="flexIcons">
-        
-
-                               <figure class="bordericonstyle greenBorder" ><img src="./img/calendar-icon.svg" alt="">
-                                </figure>
-                                
-                                <figure class="bordericonstyle blueBorder"><img src="./img/pen-edit.svg" alt=""></figure>
-
-                                <figure class="bordericonstyle redBorder"><img src="./img/trash-icon.svg" alt="">
-                                </figure>
-                                
-                           </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="topCell">teste</td>
-                        <td class="MiddleCellStyle">teste</td>
-                        <td class="MiddleCellStyle">teste</td>
-                        <!-- Onde está os icones da tabela de listagem de pacientes -->
-                        <td class="lastCellStyle">
-                            <div class="flexIcons">
-                                <figure class="bordericonstyle greenBorder">
-                                <img src="./img/calendar-icon.svg" alt="">
-                                </figure>
-                                <figure class="bordericonstyle  blueBorder">
-                                    <img src="./img/pen-edit.svg" alt="">
-                                </figure>
-                                <figure class="bordericonstyle redBorder"><img src="./img/trash-icon.svg" alt="">
-                                </figure>
-                            </div>
-                        </td>
-                    </tr>
-                </tbody>
-                <tfoot>
-                    <tr>
-                        <td class="topCell">teste</td>
-                        <td class="MiddleCellStyle">teste</td>
-                        <td class="MiddleCellStyle">teste</td>
-                        <!-- Onde está os icones da tabela de listagem de pacientes -->
-                        <td class="lastCellStyle">
-                            <div class="flexIcons">
-                                <figure  class="bordericonstyle greenBorder"><img src="./img/calendar-icon.svg" alt="">
-                                </figure>
-                                <figure class="bordericonstyle blueBorder"><img src="./img/pen-edit.svg" alt=""></figure>
-                                <figure class="bordericonstyle redBorder" ><img src="./img/trash-icon.svg" alt=""></figure>
-                            </div>
-                        </td>
-                    </tr>
-                </tfoot>
-            </table>
+                <tbody class="dataSaveHereJSDinamic"></tbody>
+                   
+               
+            </table> 
         </main>
         
     
 
     <!-- Modal HTML structure -->
-    <section class="newSubscribeModal">
-<div>
-    
-            <div class="topModal">
-    
-            <div>
-                <h2 class="titleModal">Novo paciente</h2>
-            </div>
-            <div>
-                <i class="fa-sharp fa-solid fa-circle-xmark closeIconModal" style="color: #000000;"></i>
-            </div>
-    
-            </div>
-    <div class="spaceBtw" >
-            <form action="" class="formModal">
-    <div>
-    
-                    <div class="inputDivisionFlex">
-                        <div><div><label for="">CPF</label></div>
-                            <input class="inputNewSubStyle" type="text" placeholder="Digite">
-                        </div>
-    
-                        <div>
-                            <div><label for="">Nome</label></div>
-                            <input class="inputNewSubStyle" type="text" placeholder="Digite">
-                        </div>
-    
-                        <div>
-                            <div><label for="">Data de Nascimento</label></div>
-                            <input class="inputNewSubStyle" type="text" placeholder="Digite">
-                        </div>
-                    </div>
-    
-    
-                    <div class="inputDivisionFlex">
-    
-                        <div>
-                            <div><label for="">E-mail</label></div>
-                            <input class="inputNewSubStyle" type="text" placeholder="Digite">
-                        </div>
-    
-                        <div>
-                            <div><label for="">Sexo/Gênero</label></div>
-                            <input class="inputNewSubStyle" type="text" placeholder="Digite">
-    
-                        </div>
-    
-                            <div>
-                                <div><label for="">Nacionalidade</label></div>
-                                <input class="inputNewSubStyle" type="text" placeholder="Digite">
+    <div class="backgroundModalInput">
+        <section class="newSubscribeModal">
+        <div>
+        
+                <div class="topModal">
+        
+                <div>
+                    <h2 class="titleModal">Novo paciente</h2>
+                </div>
+                <div>
+                    <i class="fa-sharp fa-solid fa-circle-xmark closeIconModal" style="color: #000000;" onclick="closeModal()"></i>
+                </div>
+        
+                </div>
+        <div class="spaceBtw" >
+                <form action="" class="formModal">
+        <div>
+        
+                        <div class="inputDivisionFlex">
+                            <div><div><label for="cpfUser">CPF</label></div>
+                                <input class="inputNewSubStyle" type="text" id="cpfUser" name="cpfUser" placeholder="Digite">
                             </div>
-                    </div>
-    
-                    </div>
-    
-    
+        
+                            <div>
+                                <div><label for="nameUser">Nome</label></div>
+                                <input class="inputNewSubStyle" type="text"  id="nameUser" name="nameUser" placeholder="Digite">
+                            </div>
+        
+                            <div>
+                                <div><label for="dateBirthUser">Data de Nascimento</label></div>
+                                <input class="inputNewSubStyle" type="date"  id="dateBirthUser" name="dateBirthUser" placeholder="Digite">
+                            </div>
+                        </div>
+        
+        
+                        <div class="inputDivisionFlex">
+        
+                            <div>
+                                <div><label for="emailUser">E-mail</label></div>
+                                <input class="inputNewSubStyle" type="email"  id="emailUser" name="emailUser" placeholder="Digite">
+                            </div>
+        
+                            <div>
+                                <div><label for="userGender">Sexo/Gênero</label></div>
+                                <input class="inputNewSubStyle" type="text"  id="userGender" name="userGender" placeholder="Digite">
+        
+                            </div>
+        
+                                <div>
+                                    <div><label for="userNationality">Nacionalidade</label></div>
+                                    <input class="inputNewSubStyle" type="text"  id="userNationality" name="userNationality" placeholder="Digite">
+                                </div>
+                        </div>
+        
+                        </div>
+        
+        
+                            <div class="inputDivisionFlex">
+                                <div>
+                                    <div><label for="userNaturalness">Naturalidade</label></div>
+                                        <input class="inputNewSubStyle" type="text"  id="userNaturalness" name="userNaturalness" placeholder="Digite">
+                                </div>
+        
+                                <div>
+                                    <div><label for="userProfession">Profissão</label></div>
+                                    <input class="inputNewSubStyle" type="text"  id="userProfession" name="userProfession" placeholder="Digite">
+                                </div>
+                                <div>
+                                    <div><label for="userScholarity">Escolaridade</label></div>
+                                    <input class="inputNewSubStyle" type="text"  id="userScholarity" name="userScholarity" placeholder="Digite">
+                                </div>
+        
+                            </div>
+        
+        
                         <div class="inputDivisionFlex">
                             <div>
-                                <div><label for="">Naturalidade</label></div>
-                                    <input class="inputNewSubStyle" type="text" placeholder="Digite">
+                                <div><label for="UsermaritalStatus">Estado Civil</label></div>
+                                <input class="inputNewSubStyle" type="text"  id="UsermaritalStatus" name="UsermaritalStatus" placeholder="Digite">
                             </div>
-    
+        
                             <div>
-                                <div><label for="">Profissão</label></div>
-                                <input class="inputNewSubStyle" type="text" placeholder="Digite">
+                                <div><label for="userMotherName">Mãe</label></div>
+                                <input class="inputNewSubStyle"  type="text"  id="userMotherName" name="userMotherName" placeholder="Digite">
                             </div>
+        
                             <div>
-                                <div><label for="">Escolaridade </label></div>
-                                <input class="inputNewSubStyle" type="text" placeholder="Digite">
+                                <div><label for="userFatherName">Pai</label></div>
+                                <input class="inputNewSubStyle" type="text"  id="userFatherName" name="userFatherName" placeholder="Digite">
                             </div>
-    
+        
                         </div>
-    
-    
-                    <div class="inputDivisionFlex">
-                        <div>
-                            <div><label for="">Estado Civil</label></div>
-                            <input class="inputNewSubStyle" type="text" placeholder="Digite">
-                        </div>
-    
-                        <div>
-                            <div><label for="">Mãe</label></div>
-                            <input class="inputNewSubStyle"  type="text" placeholder="Digite">
-                        </div>
-    
-                        <div>
-                            <div><label for="">Pai</label></div>
-                            <input class="inputNewSubStyle" type="text" placeholder="Digite">
-                        </div>
-    
+        </div>
+        
+        
+                <hr class="divisionLine">
+                <div class="modalEndPart">
+                    <div>
+                        <p class="txtModalAlert"><sup>*</sup>Campos obrigatórios</p>
                     </div>
+        
+        
+                    <div class="btnSalveFlex">
+                        <button class="cancelBtn" onclick="modalInputsNewSubscribe()">Cancelar</button>
+                        <button type="button"class="salveBtn">Salvar</button>
+                        <!-- Quando enviar fazendo a observação do click sempre colocar o type="button" para ele não mandar ás informações de forma padrão -->
+                        <button type="button
+                        " class="btnToEditDate" onclick="">Salvar Alterações</button>
+                    </div>
+        
+        
+                </div>
+        
+        
+                </form>
+            </section>
     </div>
-    
-    
-            <hr class="divisionLine">
-            <div class="modalEndPart">
-                <div>
-                    <p class="txtModalAlert"><sup>*</sup>Campos obrigatórios</p>
-                </div>
-    
-    
-                <div class="btnSalveFlex">
-                    <button class="cancelBtn" onclick="z">Cancelar</button>
-                    <button class="salveBtn">Salvar</button>
-                </div>
-    
-    
-            </div>
-    
-    
-            </form>
-        </section>
 
 <div>
 </body>
