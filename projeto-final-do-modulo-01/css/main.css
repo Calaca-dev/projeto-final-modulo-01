@@ -1,1 +1,241 @@
 /* main css of web application */
+/* FONTES USADAS */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+/* CSS RESET */
+
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font-family: 'Montserrat', sans-serif;
+    vertical-align: baseline;
+}
+
+/* ----------PARTE DO CABEÇALHO----------- */
+body {
+    background-color: #E5E5E5;
+}
+
+.menu {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.875em;
+    align-items: center;
+    box-shadow: 0px 4px 10px 0px #0000001A;
+    background-color: #E5E5E5;
+}
+
+/*  quando se vai fixar o menu/header na tela para a página ter um scroll tem se colocar um padding do mesmo tamanho do width do header */
+
+.logoHeader {
+    width: 5em;
+    height: 5.046875em;
+    box-shadow: 0px 4px 20px 0px #0000001A;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.spaceHeader {
+    width: 100vw;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 1.875em;
+}
+
+.idUser {
+    color: #017849;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+.spaceIcon {
+    margin-right: 1em;
+    font-weight: 700;
+
+}
+
+.arrowStyle {
+    color: black;
+
+}
+
+#arrowUpStyle {
+    display: inline-block;
+}
+
+#arrowDownStyle {
+    display: none;
+}
+
+/*-----------MODAL DO HEADER--------------- */
+
+.bubbleTip {
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    position: fixed;
+    transform: rotate(45deg);
+    top: 75px;
+    margin-left: 115px;
+
+}
+
+.bubblueLogOut {
+    width: 17.4375em;
+    height: fit-content;
+    position: fixed;
+    right: 1.875em;
+    top: 5.5625em;
+    border-radius: 16px;
+    background-color: #FFFFFF;
+    padding: 0.625em;
+    display: none;
+
+
+}
+
+.logOutArea {
+    display: flex;
+    justify-content: flex-start;
+    gap: 0.5em;
+    padding: 1em;
+    align-items: baseline;
+
+}
+
+.bubblueTopPart {
+    display: flex;
+    gap: 0.288125em;
+    flex-direction: column;
+    background-color: white;
+    justify-content: flex-start;
+    padding-left: 0.861875em;
+}
+
+.btnLogOut {
+    all: unset;
+    font-family: 'Comfortaa', cursive;
+    font-size: 0.875em;
+    cursor: pointer;
+}
+
+/* -------TITULO E BARRA DE PESQUISA---------- */
+
+div>#titlePage {
+    display: flex;
+    width: 53em;
+    height: fit-content;
+    justify-content: flex-start;
+    margin-bottom: 0.5em;
+}
+
+#titlePage {
+
+    font-size: 1.5em;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+    color: #4F4F4F;
+}
+
+.subscribeAndSearch {
+    width: 66em;
+    position: sticky;
+    bottom: 70%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 3em;
+}
+
+.subscribeBtn {
+    all: unset;
+    width: 12.3125em;
+    height: 3.25em;
+    color: white;
+    background-color: #017849;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.625em;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+}
+
+.btnSubStyle {
+    font-size: 1.25em;
+}
+
+.searchArea {
+    display: flex;
+    justify-content: center;
+
+}
+
+.inputSearch {
+    all: unset;
+    width: 23.6875em;
+    height: 2.9em;
+    border-radius: 30px 0px 0px 30px;
+    border: 1px solid #BDBDBD;
+    padding-left: 1em;
+    background-color: white;
+
+}
+
+.inputSearch::placeholder {
+    color: #828282;
+}
+
+.btnSearch {
+    all: unset;
+    width: 7.8125em;
+    color: white;
+    height: 3em;
+    background-color: #017849;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 0px 30px 30px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.625em;
+    cursor: pointer;
+}
+
+.wraper {
+    background-color: #E5E5E5;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}

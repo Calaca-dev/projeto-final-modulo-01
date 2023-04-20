@@ -2,6 +2,8 @@ const cardElementTable = document.querySelector('.mainContent');
 const btnSaveInputDate = document.querySelector('.salveBtn');
 const formDate = document.querySelector('.formModal')
 const modifyBtn = document.querySelector('.btnToEditDate');
+const takingDataForPut = document.querySelector('.callDataToMakePut');
+
 
 function changeInputs() {
   const hideNameEmailCard = document.querySelector('.subscribeCard');
@@ -42,14 +44,29 @@ function bubblueModalOpenClose() {
   else {
     modalbubble.style.display = "block"
   }
-
-
 }
+/* fecha modal bubble */
+function closeBubblue() {
+  const modalbubble = document.querySelector('.bubblueLogOut');
+  modalbubble.style.display = "none"
+}
+/* Fechando bubble modal quando toca fora da bubble */
+window.addEventListener('click',(event) =>{
+          
+  const fechaModalForaDaDiv3 = document.querySelector('.wraper');
+
+  if (event.target === fechaModalForaDaDiv3){
+    closeBubblue() 
+       
+  }
+/* consertar bugzin irritando, que ele não fecha quando dou click no mainContent e na logo do menu*/
+})  
+
 /* Função do modal de novo cadastro */
 
 function modalInputsNewSubscribe() {
   const modalContainer = document.querySelector('.newSubscribeModal');
-  
+
   const backColorModal =  document.querySelector('.backgroundModalInput');
   modalContainer.style.display === 'none';
   if (modalContainer) {
@@ -65,15 +82,6 @@ function modalInputsNewSubscribe() {
 
 }
 
-/* Função do modal edição */
-
- function modalModifyData() {
-  modalInputsNewSubscribe();
-  btnSaveInputDate.style.display="none";
-  modifyBtn.style.display="flex";
-
- }
-
 function closeModal() {
   const modalContainer = document.querySelector('.newSubscribeModal');
   const mainContainer = document.querySelector('.mainContent');
@@ -83,83 +91,54 @@ function closeModal() {
   backColorModal.style.display = 'none';
 
 }
+ /* Fechando modal de confirmação quando toca fora modal novo cadastro*/
+window.addEventListener('click',(event) =>{
+          
+  const fechaModalForaDaDiv2 = document.querySelector('.backgroundModalInput')
+ 
+  if (event.target === fechaModalForaDaDiv2){
+
+     closeModal(); 
+  }
+})  
+
+/* modal vizualição */
+
+async function modalShowDataUsers(id) {
+  const styleChangeToView = document.querySelector('#deleteModalEndPart');
   
+  const changingTitleModal = document.querySelector('#hideInModalShow')
+  const showTitle = document.querySelector('#modalViewTitle')
+  modalInputsNewSubscribe();
+ 
 
-
-/* Pegando dados dos pacientes */
-const getDataPatientsInApi = async () => {
-      const apiRequsition = await fetch ('http://localhost:3000/pacientes');
-      const patientSubscribe = await apiRequsition.json()
-     /* pegando id p/ colocar os dados salvo da api na tela do usuário */
-
-   
-
-/* pegando id do usuário */
-      const puttingDateInHtml = document.querySelector('.dataSaveHereJSDinamic');
-      let dinamicHtmlJS ='';
-      patientSubscribe.forEach((questao)=> {
-        dinamicHtmlJS = dinamicHtmlJS+ `
-
-    
-        <tr>
-          <td class="topCell" id="rgPatient">${questao.id}</td>
-       
-        <td class="MiddleCellStyle" id="NameCell01">${questao.name}</td>
-                      <td class="MiddleCellStyle" id="patientCpf">${questao.name}</td>
-        
-                      <td class="lastCellStyle">
-                          <div class="flexIcons">
-                              <figure class=" bordericonstyle  greenBorder">
-                                      <a href="./medical-record.html" target="_blank" class="linkMedicalRecordStyle"><img src="./img/calendar-icon.svg" alt=""></a>
-                              </figure>
-                              <figure class="bordericonstyle blueBorder" ><img onclick="modalModifyData()" src="./img/pen-edit.svg" alt=""></figure>
-                              <figure class="bordericonstyle redBorder" ><img src="./img/trash-icon.svg" alt=""></figure>
-                              </tr>
-        `
-        puttingDateInHtml.innerHTML = dinamicHtmlJS;
-      })
-
-    
-      
-    }   
-
-
-/* Fazendo o método POST */
-
- async function userDateApi(newPatient) {
-     return fetch('http://localhost:3000/pacientes', {
-      method: 'POST',
-        headers: {
-
-          'Accept': 'application/json, text/plain, */*',
-          'Content-Type':'application/json'
-        }, 
-        body: JSON.stringify(newPatient)
-    
-      })
-      
-    } 
-    
+  /* Usuando dom para tirar uma parte do modal */
+  changingTitleModal.style.display="none";
+  styleChangeToView.style.display="none";
   
-/* Fazendo o método PUT */
-const modifyDateInput = async (id)=> {
+  /*Usuando dom para mudar o title do modal*/
+  showTitle.style.display="flex";
+
+  /* OBS não funcionaou pegando só a class de estilização tive que pegar por id */
+
+  
   const apiRequsition = await fetch(`http://localhost:3000/pacientes/${id}`)
   const newPatient = await apiRequsition.json();
-  document.querySelector('#cpfUser').value = newPatient.cpf;
-  console.log(newPatient.cpf)
-  modalModifyData();
-
   
- }
+  document.querySelector('#cpfUser').value = newPatient.cpf;
+  document.querySelector('#nameUser').value = newPatient.name;
+  document.querySelector('#dateBirthUser').value = newPatient.birth;
+  document.querySelector('#emailUser').value = newPatient.email;
+  document.querySelector('#userGender').value = newPatient.gender;  
+  document.querySelector('#userNationality').value = newPatient.country;
+  document.querySelector('#userNaturalness').value = newPatient.bornIn;
+  document.querySelector('#userProfession').value = newPatient.job;
+  document.querySelector('#userScholarity').value = newPatient.educationLevel;
+  document.querySelector('#UsermaritalStatus').value = newPatient.loveStatus;
+  document.querySelector('#userMotherName').value = newPatient.fatherFigure;
+  document.querySelector('#userFatherName').value = newPatient.motherFigure;
 
-
-/* mudando butão c/ js do modalinput */
-
-/* id que está sendo atualizado */
-let idAtual = null;
-
-modifyBtn.addEventListener('click', async(date)=>{
-  const cpfValue = document.querySelector('#cpfUser');
+const cpfValue = document.querySelector('#cpfUser');
   const nameValue = document.querySelector('#nameUser');
   const birthValue = document.querySelector('#dateBirthUser');
   const emailValue = document.querySelector('#emailUser');
@@ -172,22 +151,196 @@ modifyBtn.addEventListener('click', async(date)=>{
   const momName = document.querySelector('#userMotherName');
   const dadName = document.querySelector('#userFatherName');
 
-  const newPatient = {
-    id:"",
-     cpf:cpfValue.value,
-     name:nameValue.value,
-     birth:birthValue.value,
-     email:emailValue.value,
-     gender:genderValue.value,
-     country:userCountry.value,
-     bornIn:whereUserBorn.value,
-     job:profession.value,
-     educationLevel:schoolLevel.value,
-     loveStatus:relationshipStatus.value,
-     fatherFigure:momName.value,
-     motherFigure:dadName.value,
+  /* Usuando dom para mudar cor dos inputs */
+  cpfValue.style.backgroundColor="#E0E0E0";
+  nameValue.style.backgroundColor="#E0E0E0";
+  birthValue.style.backgroundColor="#E0E0E0";
+  emailValue.style.backgroundColor="#E0E0E0";
+  genderValue.style.backgroundColor="#E0E0E0";
+  userCountry.style.backgroundColor="#E0E0E0";
+  whereUserBorn.style.backgroundColor="#E0E0E0";
+  profession.style.backgroundColor="#E0E0E0";
+  schoolLevel.style.backgroundColor="#E0E0E0";
+  relationshipStatus.style.backgroundColor="#E0E0E0";
+  momName.style.backgroundColor="#E0E0E0";
+  dadName.style.backgroundColor="#E0E0E0";
+  
+    
+}
 
+/* Modal que confirma sucesso de cadastro */
+ function modalConfirmationNewSub() {
+  const modalContainer = document.querySelector('.modalSuccess');
+  const closeBackModal = document.querySelector('.backgroundModalInput')
+  const backColorModal =  document.querySelector('.backgroundSuccessModal');
+  closeBackModal.style.display = 'none'
+  modalContainer.style.display === 'none';
+  if (modalContainer) {
+    modalContainer.style.display = 'flex';
+    
+    backColorModal.style.display = 'flex';
   }
+  else {
+    modalContainer.style.display = 'none';
+
+    backColorModal.style.display = 'none';
+  }
+ }
+
+ /* Fechando modal de sucesso*/
+
+  function closeSuccessModal() {
+    const modalContainer = document.querySelector('.modalSuccess');
+    const mainContainer = document.querySelector('.mainContent');
+    const backColorModal =  document.querySelector('.backgroundSuccessModal');
+    modalContainer.style.display = 'none';
+    mainContainer.style.display = 'flex';
+    backColorModal.style.display = 'none';
+   
+  }
+  /* Fechando modal de confirmação quando toca fora modal de sucesso */
+  window.addEventListener('click',(event) =>{
+          
+    const fechaModalForaDaDiv = document.querySelector('.backgroundSuccessModal')
+    if (event.target === fechaModalForaDaDiv){
+        closeSuccessModal();
+         
+    }
+})  
+  
+
+/* Função do modal edição */
+
+ async function modalModifyData(id) {
+   modalInputsNewSubscribe();
+   
+   btnSaveInputDate.style.display="none";
+   modifyBtn.style.display="flex";
+
+  const apiRequsition = await fetch(`http://localhost:3000/pacientes/${id}`)
+  const newPatient = await apiRequsition.json();
+
+  document.querySelector('#cpfUser').value = newPatient.cpf;
+  document.querySelector('#nameUser').value = newPatient.name;
+  document.querySelector('#dateBirthUser').value = newPatient.birth;
+  document.querySelector('#emailUser').value = newPatient.email;
+  document.querySelector('#userGender').value = newPatient.gender;  
+  document.querySelector('#userNationality').value = newPatient.country;
+  document.querySelector('#userNaturalness').value = newPatient.bornIn;
+  document.querySelector('#userProfession').value = newPatient.job;
+  document.querySelector('#userScholarity').value = newPatient.educationLevel;
+  document.querySelector('#UsermaritalStatus').value = newPatient.loveStatus;
+  document.querySelector('#userMotherName').value = newPatient.fatherFigure;
+  document.querySelector('#userFatherName').value = newPatient.motherFigure;
+
+
+ }
+
+
+/* Pegando dados dos pacientes */
+const getDataPatientsInApi = async () => {
+      const apiRequsition = await fetch ('http://localhost:3000/pacientes');
+      const patientSubscribe = await apiRequsition.json()
+     
+
+      const puttingDateInHtml = document.querySelector('.dataSaveHereJSDinamic');
+      let dinamicHtmlJS ='';
+      patientSubscribe.forEach((userDataValue)=> {
+        dinamicHtmlJS = dinamicHtmlJS+ `
+
+    
+        <div class="flexIcons">
+        <tr class="showIndividualData">
+        
+          
+            <td onclick="modalShowDataUsers(${userDataValue.id})" class="topCell" id="rgPatient">${userDataValue.id}</td>
+          <td onclick="modalShowDataUsers(${userDataValue.id})" class="MiddleCellStyle" id="NameCell01">${userDataValue.name}</td>
+                        <td onclick="modalShowDataUsers(${userDataValue.id})" class="MiddleCellStyle" id="patientCpf">${userDataValue.cpf}</td>
+          
+        
+                      <td class="lastCellStyle">
+                              <figure class=" bordericonstyle  greenBorder">
+                              <a href="./medical-record.html" target="_blank"     class="linkMedicalRecordStyle"><img src="./img/calendar-icon.svg" alt=""></a>
+                              </figure>
+                              <figure class="bordericonstyle blueBorder">
+                              <img onclick="modalModifyData(${userDataValue.id})" src="./img/pen-edit.svg" alt=""></figure>
+                              <figure class="bordericonstyle redBorder" ><img src="./img/trash-icon.svg" alt=""></figure>
+                              </div>
+                              </tr>
+        `
+        puttingDateInHtml.innerHTML = dinamicHtmlJS;
+      })
+
+    }   
+
+    function addHtml(){
+    const addingHtml = document.querySelector('.addDinamicSection');
+    let addingSection ='';
+   
+    addingSection = addingSection + `
+
+    <div class="mainAdd">
+    <hr class="alineSection">
+    <span>Filtrar por:</span>Todos<span><i class="fa-solid fa-caret-down arrowStyle"></i></span></div>
+
+    
+    
+</div>
+
+
+    <div class="flexCardPatient">
+    <div>
+        <div class="bgIcon">
+            <figure><img src="./img/icon-section.png" alt=""></figure>
+        </div>
+        <div class="patientSection">
+            <div class="flexTopSection">
+                <h3 class="txtTitleDescription">Titulo</h3>
+                <p class="txtDescription">22 de setembro de 2022</p>
+            </div>
+            <button><img src="./img/dots-icon.png" alt=""></button>
+        </div>
+    </div>
+    <div class="bodyCard">
+
+        <p>A paciente relatou que estava tendo dificuldades com sua família e amigos próximos, pois demostra ansiedade diante de fatos cotidianos, resultando em reações de raiva com as pessoas que estão próximas a ela. Além disso, relatou brigas recentes com seus pais e namorado e, após a briga, ficou mal diante</p>
+
+    </div>
+</div>
+    `
+    addingHtml.innerHTML = addingSection;
+  }
+
+/* Fazendo o método POST */
+
+ async function userDateApi(newPatient) {
+     return fetch('http://localhost:3000/pacientes', {
+      method: 'POST',
+        headers: {
+          'Accept': 'application/json, text/plain, */*',
+          'Content-Type':'application/json'
+        }, 
+        body: JSON.stringify(newPatient)
+    
+      })
+      
+    } 
+    
+const checkAndEditData = async (id) => {
+  const apiRequsition = await fetch ('http://localhost:3000/pacientes');
+  const patientSubscribe = await apiRequsition.json(  )
+
+  const dataOne = patientSubscribe.dataOnefind.find((alternativa)=> alternativa.number)
+
+}
+/* Fazendo o método PUT */
+
+
+
+/* id que está sendo atualizado */
+let idAtual = null;
+
+modifyBtn.addEventListener('click', async(date)=>{
 
   if (idAtual) {
       await modifyDateInput(idAtual,newPatient)
@@ -203,7 +356,6 @@ modifyBtn.addEventListener('click', async(date)=>{
 
 async function sendingUserDate () {
   
-
   const cpfValue = document.querySelector('#cpfUser');
   const nameValue = document.querySelector('#nameUser');
   const birthValue = document.querySelector('#dateBirthUser');
@@ -217,8 +369,8 @@ async function sendingUserDate () {
   const momName = document.querySelector('#userMotherName');
   const dadName = document.querySelector('#userFatherName');
 
-  const newPatient = {
-    id:"",
+const newPatient = {
+     id:"",
      cpf:cpfValue.value,
      name:nameValue.value,
      birth:birthValue.value,
@@ -234,12 +386,12 @@ async function sendingUserDate () {
 
   }
     console.log(newPatient);
-  await userDateApi(newPatient);
+  await userDateApi(newPatient);  
 
 }
 
 
 /* chamando funções e colocando observadores*/
 btnSaveInputDate.addEventListener('click',sendingUserDate); 
-getDataPatientsInApi();
-modifyBtn.addEventListener('click',modifyDateInput)
+getDataPatientsInApi(); 
+modifyBtn.addEventListener('click',modalModifyData)

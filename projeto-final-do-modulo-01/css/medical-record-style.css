@@ -1,0 +1,188 @@
+#linkToGoBack {
+    display: flex;
+    text-decoration: none;
+
+    color: #212121;
+    width: 11.875em;
+    margin-left: 1.25em;
+    font-family: 'Comfortaa', cursive;
+    font-size: 1em;
+}
+
+#linkToGoBack:hover {
+    transform: scale(1.1);
+}
+
+.asideContent {
+    width: 21.25em;
+    height: fit-content;
+    background-color: white;
+    box-shadow: 1px 1px 5px 0px #0000001A;
+    border-radius: 8px;
+    margin-top: 2em;
+    margin-left: 8.625em;
+    padding: 1.5em;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.titleAsideStyle {
+    font-family: 'Montserrat', sans-serif;
+    color: #00995D;
+    font-weight: 400;
+    font-family: 1em;
+}
+
+.asideMainTitle {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 3em;
+}
+
+.contentAsideImgs {
+    width: 0.666875em;
+    height: 0.875em;
+    margin-right: 0.666875em;
+
+}
+
+.searchMedicalRecord {
+    width: 90em;
+    height: fit-content;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 9em;
+}
+
+/* quando elementos que estão em baixo um do outro tem um de baixo com position fixed, não dá para mover os outros p/ baixo */
+.wraperMedicalRecord {
+    background-color: #E5E5E5;
+    width: 7.0625em;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.flexSection {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-left: 10em;
+    position: fixed;
+    top: 20.7%;
+}
+
+.addDataAboutPatients {
+    width: 57.75em;
+    height: 5em;
+    display: flex;
+    box-shadow: 1px 1px 5px 0px #0000001A;
+    background-color: white;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-left: 7.75em;
+    padding-right: 7.75em;
+}
+
+.alignBtn {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.alignBtn:hover {
+    transform: scale(1.1);
+}
+
+.imgsSection {
+    padding-right: 0.7275em;
+}
+
+.btnSections {
+    all: unset;
+    width: 9em;
+    height: fit-content;
+    font-family: 'Montserrat', sans-serif;
+    
+
+}
+.mainAdd {
+width:   57.75em;
+margin-top: 2.9375em;
+display: flex;
+align-items: center;
+justify-content: center;
+
+}
+.alineSection {
+    width: 46em;
+    height: 1px;
+    color: #BDBDBD;
+    margin-right: 1em;   
+}
+.patientSection {
+    width:57.75em ;
+    height: fit-content;
+    padding: 1em;
+    display: flex;
+    justify-content: space-between;
+    
+}
+.txtTitleDescription {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 1.125em;
+}
+.txtDescription {
+    font-size: 0.875em;
+    font-weight: 400;
+    font-family: 'Montserrat', sans-serif;
+    color: #616161;
+}
+.flexCardPatient {
+width:   57.75em;
+height: 13.125em;
+border-radius: 0px 8px 8px 0px;
+box-shadow: 1px 1px 5px 0px #0000001A;
+background-color: white;
+margin-top: 2.9375em;
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+border-left:4px solid #00995D ;
+
+}
+.bodyCard {
+    width: fit-content;    
+    height: fit-content;
+    padding: 1.25em;
+    font-family: 'Montserrat', sans-serif;
+}
+.bgIcon {
+    width: 3em;
+    height: 3em;
+    border-radius: 50%;
+    background-color: #00995D;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;    
+    bottom:180px;
+    left: 20px;
+}
+.flexSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+/* Modal Estilzação  */

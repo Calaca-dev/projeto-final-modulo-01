@@ -1,15 +1,111 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="./css/style-subscribe-page.css">    
-<link rel="stylesheet" href="">
-<link rel="stylesheet" href="">
-    <title>Document</title>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="./css/medical-record-style.css">    
+<link rel="stylesheet" href="./css/main.css">
+<script src="https://kit.fontawesome.com/d0129d2559.js" crossorigin="anonymous" defer></script>
+<script src="./js/app.js"></script>
+    <title>Protuário do paciente</title>
 </head>
 <body>
+    <header class="menu">  
+        <div class="logoHeader">
+            <figure class="imgLogo"><img src="./img/logo-header-patients-page.png" alt=""></figure>
+        </div>
+        <a href="./patients.html" target="_self" id="linkToGoBack">Voltar a Listagem</a>
+        <div class="spaceHeader" onclick="changeArrowAndOpenModal()" >
+            <div class="idUser">
+                <p>Bem-vindo(a)<span class="spaceIcon">usuário</span>
+                    <i class="fa-solid fa-caret-up arrowStyle " id="arrowUpStyle"></i>
+                <i class="fa-solid fa-caret-down arrowStyle" id="arrowDownStyle"></i>
+                </p>
+            </div>
+            
+        </div>
+    </div>
+    <div class="bubblueLogOut">
+        <div class="bubbleTip"></div>
+        <div class="bubblueTopPart">
+            <h4 class="titleBubble">Admin</h4>
+            <p>daniel.wexer@gmail.com</p>
+        </div>
+        <div class="logOutArea">
+            <figure><img src="./img/arrow-right-header.png" alt=""></figure>
+            <button class="btnLogOut">Sair</button>
+        </div>
+    </header>
+
+<div class="wraperMedicalRecord">
     
+    <div class="searchMedicalRecord">
+               
+                        <h1 id="titlePage">Prontuário</h1>
+                        
+                        <div class="searchArea">
+                            <input type="text" class="inputSearch" placeholder="Pesquisar">
+                            
+                            <button class="btnSearch">
+
+                                <span><i class="fa-solid fa-magnifying-glass btnSubStyle"></i>
+                                </span>Filtrar
+
+                            </button>
+                  </div>
+              </div>
+
+              <div class="flexSection">
+                <section class="addDataAboutPatients">
+                      <div class="alignBtn">            
+                          <img src="./img/seasionIcon.svg" class="imgsSection" alt="">  
+                          <button class="btnSections" onclick="addHtml()" >Sessão</button>
+                      </div>
+                   
+                    <div class="alignBtn">
+                        <img src="./img/pinIcon.svg" alt=""class="imgsSection" >
+                        <button class="btnSections">Fato relevante</button>
+                    </div>
+        
+                    
+                </section>
+                
+                   
+                    <div class="addDinamicSection"></div>
+                        </div>
+            </div>
+        
+        
+        
+              
+              <aside class="asideContent">
+                  
+        <h3 id="asideMainTitle">Identificação do paciente</h3>
+        <div>
+            <img src="./img/icon-person.svg" alt="" class="contentAsideImgs" ><span class="titleAsideStyle">Paciente</span>
+        </div>
+        <p>Lorem ipsum dolor sit</p>
+        <div>
+            <img src="./img/birthy.svg" alt="" class="contentAsideImgs" ><span class="titleAsideStyle">Nascimento</span>
+        </div>
+        <p>Lorem ipsum dolor </p>
+        <div>
+            <img src="./img/job.svg" alt="" class="contentAsideImgs" ><span class="titleAsideStyle">Profissão</span>
+        </div>
+        <p>Lorem ipsum dolor sit</p>
+        <div>
+            <img src="./img/education.svg" alt="" class="contentAsideImgs" ><span class="titleAsideStyle">Escolaridade</span>
+        </div>
+        <p>Lorem ipsum dolor</p>
+    </aside>
+    
+   
+
+<form action="">
+    <div class="modalNewSection">
+
+    </div>
+</form>
 </body>
 </html>
