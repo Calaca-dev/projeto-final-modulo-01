@@ -107,15 +107,7 @@ th {
 .showIndividualData:hover {
     transform: scale(1.1);
 }
-.backgroundModalInput {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    inset: 0;
-    background-color: rgba(0, 0, 0, 0.71);
-    display: none;
-}
+
 .backgroundModalInput02 {
     display: flex;
     justify-content: center;
@@ -142,13 +134,11 @@ th {
     display: none;
 }
 
-.titleModal {
-    font-size: 1.5em;
-    font-family: 'Montserrat', sans-serif;
-    color: #00995D;
 
-}
 #modalViewTitle {
+    display: none;
+}
+#titleModalEditData {
     display: none;
 }
 
@@ -161,10 +151,7 @@ th {
     padding: 3em 2em 0em 2em;
 }
 
-.closeIconModal {
-    font-size: 1.5em;
-    cursor: pointer;
-}
+
 
 .formModal {
     margin: 3em 2em 3em 0em;
@@ -189,64 +176,13 @@ th {
     padding-left: 1em;
 }
 
-.txtModalAlert {
-    font-family: 'Poppins', sans-serif;
-    font-family: 400;
-    color: #616161;
-}
 
 .spaceBtw {
     margin: 2em;
 }
 
-.btnSalveFlex {
 
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    font-weight: 700;
-    font-size: 1em;
-    gap: 1.5em;
-}
 
-.salveBtn {
-    all: unset;
-    width: 9.1875em;
-    height: 3em;
-    color: white;
-    background-color: #017849;
-    border-radius: 8px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Montserrat', sans-serif;
-    cursor: pointer;
-}
-
-.cancelBtn {
-    all: unset;
-    font-weight: 700;
-    font-family: 'Montserrat', sans-serif;
-    color: #616161;
-    cursor: pointer;
-}
-
-.modalEndPart {
-    width: 68.3125em;
-    height: fit-content;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: row;
-    padding: 1.5625em 2em 1.5em 2em;
-
-}
-
-.divisionLine {
-    width: 68.3125em;
-    border: 1px solid #E0E0E0;
-}
 
 .inputSearch {
     padding-left: 10px;

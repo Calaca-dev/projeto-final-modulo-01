@@ -162,7 +162,12 @@ div>#titlePage {
     font-family: 'Roboto', sans-serif;
     color: #4F4F4F;
 }
+.titleModal {
+    font-size: 1.5em;
+    font-family: 'Montserrat', sans-serif;
+    color: #00995D;
 
+}
 .subscribeAndSearch {
     width: 66em;
     position: sticky;
@@ -238,4 +243,67 @@ div>#titlePage {
     align-items: center;
     flex-direction: column;
     
+}
+.modalEndPart {
+    width: 68.3125em;
+    height: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    padding: 1.5625em 2em 1.5em 2em;
+}
+.cancelBtn {
+    all: unset;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    color: #616161;
+    cursor: pointer;
+}
+.btnSalveFlex {
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-weight: 700;
+    font-size: 1em;
+    gap: 1.5em;
+}
+.salveBtn {
+    all: unset;
+    width: 9.1875em;
+    height: 3em;
+    color: white;
+    background-color: #017849;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+}
+.divisionLine {
+    width: 68.3125em;
+    border: 1px solid #E0E0E0;
+}
+
+.closeIconModal {
+    font-size: 1.5em;
+    cursor: pointer;
+}
+.txtModalAlert {
+    font-family: 'Poppins', sans-serif;
+    font-family: 400;
+    color: #616161;
+}
+
+.backgroundModalInput {
+  
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.71);
+    display: none;
 }

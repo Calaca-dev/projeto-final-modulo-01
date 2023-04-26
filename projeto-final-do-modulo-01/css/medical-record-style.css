@@ -67,20 +67,20 @@
 }
 
 .flexSection {
-    width: 100vw;
-    height: 100vh;
+  
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin-left: 10em;
-    position: fixed;
+    margin-left: 41em;
+    position: absolute;
     top: 20.7%;
 }
 
 .addDataAboutPatients {
     width: 57.75em;
     height: 5em;
+    position: relative;
     display: flex;
     box-shadow: 1px 1px 5px 0px #0000001A;
     background-color: white;
@@ -183,6 +183,175 @@ border-left:4px solid #00995D ;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+  
+    
 }
 
-/* Modal Estilzação  */
+/* Modal Estilzação */
+
+.formContainerRecord {
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 800px;
+}
+
+.modalNewSection {
+    width:42.125em;
+    height: fit-content;
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+  
+    align-items: center;
+    border-radius:8px;
+    padding: 2em;
+   
+}
+.subscribeAndSearchModalMr{
+    width: 66em;
+    margin-bottom: 2.6875em;
+    bottom: 70%;
+    display: flex;
+    justify-content: space-between;
+    
+}
+.modalEndPartMedicalRecord {
+    width: 42.125em;
+    height: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    padding: 1.5625em 2em 1.5em 2em;
+}
+.descriptionTitles {
+  display:flex;
+  justify-content:flex-start ;
+  align-items: center;
+  gap: 0.5em;
+  margin-bottom: 1.3125em;
+  margin-top: 1.3125em;;
+
+}
+.bgIconModal {
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    background-color: #00995D;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   color: white;
+   font-family: 'Montserrat', sans-serif;
+   font-weight: 500;
+   
+}
+.txtStyleModalMr {
+   font-family: 'Montserrat', sans-serif;
+   font-weight: 500;
+   color: #212121;
+   font-size: 1.125em;
+
+}
+.inputDescriptionStyle {
+    font-size: 0.875em;
+    font-weight: 400;
+   font-family: 'Montserrat', sans-serif;
+    color: #4F4F4F;
+}
+.inputFlexModalTop{
+    display: flex;
+    align-items: center;
+    gap: 1em;
+   
+}
+.contentInsideModalStyle {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+}
+.inputStyleTopPart {
+    width: 14em;
+    height: 3em;
+    border-radius: 8px;
+    border: 1px solid #BDBDBD;
+    padding-left:1em; 
+    display: flex;
+    
+}
+.inputStyleTitle {
+    border-radius: 8px;
+    height: 3em;
+    border: 1px solid #BDBDBD;
+    margin-bottom: 1.005em;
+
+}
+.areaTxtStyle {
+    border-radius: 8px;
+    
+    border: 1px solid #BDBDBD;
+}
+.inputFlexModalEnd {
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    padding: 1em;
+    gap: 1em;
+}
+.flexRadioInputs {
+    width: 11.375em;
+    height: 3em;
+    gap: 1em;
+    display: flex;
+    justify-content:flex-start ;
+}
+.spaceBtwTitleAndInput {
+    width: 185px;
+    height: 40px;
+    display: flex;
+    justify-content: baseline;
+    align-items: center;
+    
+}
+
+.lineDivisionSpace {
+    margin-bottom: 1.3125em;
+    margin-top: 1.3125em;
+    border: 1px solid #EEEEEE;
+}
+
+.alertContainer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1em;
+    font-weight: 400;
+    color: #4F4F4F;
+    margin-left: 0.7em;
+    margin-bottom: 1em;
+}
+.tacks {
+    font-size: 1.5em;
+    transform: rotate(45deg);
+    color: #00995D;
+    margin-right: 1em;
+
+}
+.backgroundModalInputMr
+{
+display: flex;
+justify-content: center;
+align-items: center;
+position: fixed;
+inset: 0;
+background-color: rgba(0, 0, 0, 0.71);
+ display: none; 
+}

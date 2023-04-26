@@ -60,8 +60,9 @@
                 <section class="addDataAboutPatients">
                       <div class="alignBtn">            
                           <img src="./img/seasionIcon.svg" class="imgsSection" alt="">  
-                          <button class="btnSections" onclick="addHtml()" >Sessão</button>
-                      </div>
+                          <button class="btnSections" onclick="modalNewSectionMr()" >Sessão</button>
+                        </div>
+                        <!-- onclick="addHtml()"  -->
                    
                     <div class="alignBtn">
                         <img src="./img/pinIcon.svg" alt=""class="imgsSection" >
@@ -76,10 +77,7 @@
                         </div>
             </div>
         
-        
-        
-              
-              <aside class="asideContent">
+    <aside class="asideContent">
                   
         <h3 id="asideMainTitle">Identificação do paciente</h3>
         <div>
@@ -102,10 +100,116 @@
     
    
 
-<form action="">
-    <div class="modalNewSection">
-
+<form class="formContainerRecord">
+<div class="backgroundModalInputMr">
+    
+        <div class="modalNewSection">
+            <div class="subscribeAndSearchModalMr">
+    
+                <h2 class="titleModal">Nova Sessão</h2>
+                <i class="fa-sharp fa-solid fa-circle-xmark closeIconModal" style="color: #000000;" onclick="closeModalMr()"></i>
+    
+            </div>
+    
+            <div class="contentInsideModalStyle">
+                <div class="descriptionTitles">
+                    <div class="bgIconModal">
+                        <span>1</span>
+                    </div>
+            <span class="txtStyleModalMr">Dados Gerais</span>
+    
+                </div>
+                <div class="inputFlexModalTop">
+                    <div>
+                        <label class="inputDescriptionStyle" for="dateDayMonthYear">Data*</label>
+                        <input class="inputStyleTopPart" type="date" id="dateDayMonthYear" name="dateDayMonthYear"placeholder="24/01/2023">
+                    </div>
+                    <div>
+                        <label class="inputDescriptionStyle" for="initialTime">Hora de início*</label>
+                        <input class="inputStyleTopPart" type="text" id="initialTime" name="initialTime"  placeholder="12:00">
+                    </div>
+                    <div>
+                        <label class="inputDescriptionStyle" for="endTime">Hora fim*</label>
+                        <input class="inputStyleTopPart" type="text" id="endTime" name="endTime"  placeholder="13:00">
+                </div>
+            </div>
+            <hr class="lineDivisionSpace"><!-- linha que faz divisão -->
+    
+                <div class="descriptionTitles">
+                    <div class="bgIconModal">
+                        <span>2</span>
+                    </div>
+                    <span class="txtStyleModalMr">Sessão</span>
+                </div>
+                    <label class="inputDescriptionStyle" for="sectionTitle">Título*</label>
+                    <input class="inputStyleTitle" type="text" id="sectionTitle" name="sectionTitle">
+                    <label class="inputDescriptionStyle" for="notes">Resumo da sessão*</label>
+                    <textarea class="areaTxtStyle" name="notes" id="notes" cols="30" rows="10"></textarea>
+    
+                    <hr class="lineDivisionSpace"><!-- linha que faz divisão -->
+    
+                    <div class="descriptionTitles">
+    
+                        <div class="bgIconModal">
+                            <span>3</span>
+                        </div>
+                        <span class="txtStyleModalMr">Pagamento</span>
+                    </div>
+                    <div class="inputFlexModalEnd">
+    
+                        <div>
+                            <label for="howMuchMoney" class="inputDescriptionStyle spaceBtwTitleAndInput">Valor</label>
+                            <input class="inputStyleTopPart" placeholder="R$ 150,99" type="text" name="howMuchMoney" id="howMuchMoney">
+                        </div>
+                        <div>
+                            <label for="paymentType" class="inputDescriptionStyle  spaceBtwTitleAndInput">Forma de Pagamento</label>
+                            <select name="paymentType" id="paymentType">
+                                <option value="PIX">PIX</option>
+                                <option value="Dinheiro físico">Dinheiro físico</option>
+                                <option value="Débito">Débito</option>
+                                <option value="Crédito">Crédito</option>
+                            </select>
+                        </div>
+    
+                        <div>
+                            <div><label for="" class="inputDescriptionStyle     spaceBtwTitleAndInput">Status</label></div>
+                        
+                            <div class="flexRadioInputs">
+                                 <label for="debtTypeOne" style="display: none;"></label>   
+                                <div>
+                                    <input type="radio" name="debt" class="debt" id="debtTypeOne"><span>Pagou</span>
+                                </div>
+                                <label for="debtTypeTwo" style="display: none;"></label>   
+                                <div>
+                                    <input type="radio" name="debt" class="debt" id="debtTypeTwo"><span>Não pagou</span>
+                                </div>
+                            </div>
+                        </div>
+    
+                    </div>
+                    <div class="alertContainer">
+                        <div><i class="fa-solid fa-thumbtack tacks"></i></div>
+                        <p><strong>Dica:</strong>Registrar os pagamentos das sessões irá te<br> auxiliar na sua  organização financeira.</p>
+                    </div>
+            </div>
+            <hr class="divisionLine">
+            <div class="modalEndPartMedicalRecord">
+                <div>
+                    <p class="txtModalAlert"><sup>*</sup>Campos obrigatórios</p>
+                </div>
+    
+                <div class="btnSalveFlex">
+                    <button class="cancelBtn" onclick="closeModalMr()">Cancelar</button>
+                    <button type="button" class="ModalMedicalRecordBtn" onclick="newSectionData()">Criar</button>
+                    <!-- Quando enviar fazendo a observação do click sempre colocar o type="button" para ele não mandar ás informações de forma padrão -->
+                </div>
+    
+            </div>
     </div>
+    
+        </div>
+</div>
 </form>
 </body>
 </html>
+

@@ -5,6 +5,22 @@ const modifyBtn = document.querySelector('.btnToEditDate');
 const takingDataForPut = document.querySelector('.callDataToMakePut');
 
 
+
+  const cpfValue = document.querySelector('#cpfUser');
+  const nameValue = document.querySelector('#nameUser');
+  const birthValue = document.querySelector('#dateBirthUser');
+  const emailValue = document.querySelector('#emailUser');
+  const genderValue = document.querySelector('#userGender');
+  const userCountry = document.querySelector('#userNationality');
+  const whereUserBorn = document.querySelector('#userNaturalness');
+  const profession = document.querySelector('#userProfession');
+  const schoolLevel = document.querySelector('#userScholarity');
+  const relationshipStatus = document.querySelector('#UsermaritalStatus');
+  const momName = document.querySelector('#userMotherName');
+  const dadName = document.querySelector('#userFatherName');
+
+
+
 function changeInputs() {
   const hideNameEmailCard = document.querySelector('.subscribeCard');
   hideNameEmailCard.style.display = "none";
@@ -66,9 +82,57 @@ window.addEventListener('click',(event) =>{
 
 function modalInputsNewSubscribe() {
   const modalContainer = document.querySelector('.newSubscribeModal');
-
+  const modalDownPart = document.querySelector('#deleteModalEndPart');
   const backColorModal =  document.querySelector('.backgroundModalInput');
+  const titleModify = document.querySelector('#titleModalEditData');  
+  const titleView = document.querySelector('#modalViewTitle')
+  const titleSubscribe = document.querySelector('#hideInModalShow')
+  const btnSaveInputDate = document.querySelector('.salveBtn')
+
+  
+/* Resentando titulo para do modal newSubscribe */
+titleModify.style.display="none"
+titleSubscribe.style.display="flex"
+titleView.style.display="none"
+
+  
+/* Resetando os campos quando abrir o modal*/
+cpfValue.value=""
+nameValue.value=""
+birthValue.value=""
+emailValue.value=""
+genderValue.value=""
+userCountry.value=""
+dadName.value=""
+whereUserBorn.value=""
+profession.value=""
+schoolLevel.value=""
+relationshipStatus.value=""
+momName.value=""
+dadName.value=""
+schoolLevel.value=""
+
+
+/* Voltando a cor normal dos inputs */
+  cpfValue.style.backgroundColor="#ffffff";
+  nameValue.style.backgroundColor="#ffffff";
+  birthValue.style.backgroundColor="#ffffff";
+  emailValue.style.backgroundColor="#ffffff";
+  genderValue.style.backgroundColor="#ffffff";
+  userCountry.style.backgroundColor="#ffffff";
+  dadName.style.backgroundColor="#ffffff";
+  whereUserBorn.style.backgroundColor="#ffffff";
+  profession.style.backgroundColor="#ffffff";
+  schoolLevel.style.backgroundColor="#ffffff";
+  relationshipStatus.style.backgroundColor="#ffffff";
+  momName.style.backgroundColor="#ffffff";
+  /* adicionando parte de baixo de volta */
+  modalDownPart.style.display ="block"
   modalContainer.style.display === 'none';
+
+/* resentando butão para o do modal de cadastro */
+ btnSaveInputDate.style.display="flex"
+
   if (modalContainer) {
     modalContainer.style.display = 'flex';
     
@@ -78,6 +142,7 @@ function modalInputsNewSubscribe() {
     modalContainer.style.display = 'none';
 
     backColorModal.style.display = 'none';
+    
   }
 
 }
@@ -138,7 +203,7 @@ async function modalShowDataUsers(id) {
   document.querySelector('#userMotherName').value = newPatient.fatherFigure;
   document.querySelector('#userFatherName').value = newPatient.motherFigure;
 
-const cpfValue = document.querySelector('#cpfUser');
+ const cpfValue = document.querySelector('#cpfUser');
   const nameValue = document.querySelector('#nameUser');
   const birthValue = document.querySelector('#dateBirthUser');
   const emailValue = document.querySelector('#emailUser');
@@ -150,6 +215,9 @@ const cpfValue = document.querySelector('#cpfUser');
   const relationshipStatus = document.querySelector('#UsermaritalStatus');
   const momName = document.querySelector('#userMotherName');
   const dadName = document.querySelector('#userFatherName');
+
+
+
 
   /* Usuando dom para mudar cor dos inputs */
   cpfValue.style.backgroundColor="#E0E0E0";
@@ -168,12 +236,14 @@ const cpfValue = document.querySelector('#cpfUser');
     
 }
 
+
+
 /* Modal que confirma sucesso de cadastro */
  function modalConfirmationNewSub() {
   const modalContainer = document.querySelector('.modalSuccess');
   const closeBackModal = document.querySelector('.backgroundModalInput')
   const backColorModal =  document.querySelector('.backgroundSuccessModal');
-  closeBackModal.style.display = 'none'
+
   modalContainer.style.display === 'none';
   if (modalContainer) {
     modalContainer.style.display = 'flex';
@@ -214,6 +284,15 @@ const cpfValue = document.querySelector('#cpfUser');
  async function modalModifyData(id) {
    modalInputsNewSubscribe();
    
+   /* mostrando só titulo certo */
+ const titleView = document.querySelector('#modalViewTitle');    
+ const titleModify = document.querySelector('#titleModalEditData');  
+ const titleSubscribe = document.querySelector('#hideInModalShow');
+
+titleView.style.display="none"
+titleSubscribe.style.display="none"
+titleModify.style.display="flex"
+
    btnSaveInputDate.style.display="none";
    modifyBtn.style.display="flex";
 
@@ -233,9 +312,41 @@ const cpfValue = document.querySelector('#cpfUser');
   document.querySelector('#userMotherName').value = newPatient.fatherFigure;
   document.querySelector('#userFatherName').value = newPatient.motherFigure;
 
-
  }
 
+ /* Modal da página do prontuário */
+function modalNewSectionMr(){
+const modalContainer = document.querySelector('.modalNewSection');
+const backColorModal =  document.querySelector('.backgroundModalInputMr');
+
+if (modalContainer) {
+    modalContainer.style.display = 'flex';
+    
+    backColorModal.style.display = 'flex';
+  }
+  else {
+    modalContainer.style.display = 'none';
+
+    backColorModal.style.display = 'none';
+    
+  }
+
+}
+/* fecha modal  protuário*/
+function closeModalMr(){
+  const fechaModalForaDaDiv4 = document.querySelector('.backgroundModalInputMr');
+  fechaModalForaDaDiv4.style.display="none"
+}
+/* fechando modal do protuário fora da janela */
+window.addEventListener('click',(event) =>{
+   
+  const fechaModalForaDaDiv4 = document.querySelector('.backgroundModalInputMr');
+ 
+  if (event.target === fechaModalForaDaDiv4){
+
+      fechaModalForaDaDiv4.style.display="none"
+  }
+})  
 
 /* Pegando dados dos pacientes */
 const getDataPatientsInApi = async () => {
@@ -264,7 +375,7 @@ const getDataPatientsInApi = async () => {
                               </figure>
                               <figure class="bordericonstyle blueBorder">
                               <img onclick="modalModifyData(${userDataValue.id})" src="./img/pen-edit.svg" alt=""></figure>
-                              <figure class="bordericonstyle redBorder" ><img src="./img/trash-icon.svg" alt=""></figure>
+                              <figure class="bordericonstyle redBorder" onclick="removeUserDate()"><img src="./img/trash-icon.svg" alt=""></figure>
                               </div>
                               </tr>
         `
@@ -325,10 +436,24 @@ const getDataPatientsInApi = async () => {
       })
       
     } 
+/* Fazendo o GET para pegar os dados e depois excluir */
+    const getQuestoes = async () => {
+      const requisicao = await fetch('http://localhost:3000/pacientes')
+      const questoes = await requisicao.json()
+      return questoes
+  }
+  
+   /* Fazendo o método DELETE */ 
+async function removeUserDate(id) {
+    await fetch(`http://localhost:3000/pacientes/${id}`, {
+        method: 'DELETE'
+    })
+    
+}
     
 const checkAndEditData = async (id) => {
   const apiRequsition = await fetch ('http://localhost:3000/pacientes');
-  const patientSubscribe = await apiRequsition.json(  )
+  const patientSubscribe = await apiRequsition.json()
 
   const dataOne = patientSubscribe.dataOnefind.find((alternativa)=> alternativa.number)
 
@@ -340,20 +465,9 @@ const checkAndEditData = async (id) => {
 /* id que está sendo atualizado */
 let idAtual = null;
 
-modifyBtn.addEventListener('click', async(date)=>{
-
-  if (idAtual) {
-      await modifyDateInput(idAtual,newPatient)
-      idAtual=null
-  }
-  else {
-    await modifyDateInput(newPatient)
-  }
-
-})
 
  
-
+/* Função que pega os dados colocados pelos usuários da página de paciente */
 async function sendingUserDate () {
   
   const cpfValue = document.querySelector('#cpfUser');
@@ -389,7 +503,49 @@ const newPatient = {
   await userDateApi(newPatient);  
 
 }
+/* Função que pega os dados colocados pelos usuários da página de paciente */
+let dinamicId = 1;//tentat conserta erro no servidor(api) que não está pegando id
+async function newSectionData() {
+  const dateWhas = document.querySelector('#dateDayMonthYear');
+  const begning = document.querySelector('#initialTime');
+  const ending = document.querySelector('#endTime');
+  const title = document.querySelector('#sectionTitle');
+  const notesSection = document.querySelector('#notes');
+  const moneyValue = document.querySelector('#howMuchMoney');
+  const payType = document.querySelector('#paymentType');
+  const chargeOrNot = document.querySelector('#debtTypeOne');
+  const chargeOrNotTwo = document.querySelector('#debtTypeTwo');
 
+
+  const dataNewSection = {
+    id:dinamicId,
+    dateValue: dateWhas.value,
+    starTime: begning.value,
+    finishTime: ending.value,
+    titleValue: title.value,
+    notesValue: notesSection.value,
+    cashValue: moneyValue.value,
+    valueType: payType.value,
+    debt: chargeOrNot.value,
+    debtTwo: chargeOrNotTwo.value,
+  }
+  console.log(dataNewSection)
+  await makingPostMedicalRecordPage(dataNewSection)
+  dinamicId = dinamicId + 1;
+  console.log(dinamicId)
+}
+
+async function makingPostMedicalRecordPage(newSectionData) {
+  return fetch('http://localhost:3000/prontuarioSessao', {
+      method: "POST",
+        headers: {
+          'Accept': 'application/json, text/plain, */*',
+          'Content-Type':'application/json'
+        }, 
+        body: JSON.stringify(newSectionData)
+    
+      })
+}
 
 /* chamando funções e colocando observadores*/
 btnSaveInputDate.addEventListener('click',sendingUserDate); 
