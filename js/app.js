@@ -19,17 +19,7 @@ let modifyingData = null;
   const relationshipStatus = document.querySelector('#UsermaritalStatus');
   const momName = document.querySelector('#userMotherName');
   const dadName = document.querySelector('#userFatherName');
-
-
-
-function changeInputs() {
-  const hideNameEmailCard = document.querySelector('.subscribeCard');
-  hideNameEmailCard.style.display = "none";
-  const showPaswordCard = document.querySelector('.cardPasssword');
-  showPaswordCard.style.display = "block"
-
-}
-
+  
 function changeArrowAndOpenModal() {
   const iconArrowDown = document.querySelector('#arrowDownStyle');
   const iconArrowUp = document.querySelector('#arrowUpStyle')
@@ -145,7 +135,7 @@ schoolLevel.value=""
     backColorModal.style.display = 'none';
     
   }
- history.go();
+
 }
 
 function closeModal() {
@@ -243,6 +233,10 @@ async function modalShowDataUsers(id) {
 
     backColorModal.style.display = 'none';
   }
+  //reload p/ atualizar informações
+  setTimeout(() => {
+    document.location.reload();
+  }, 500);
  }
 
  /* Fechando modal de sucesso*/
@@ -306,39 +300,9 @@ titleModify.style.display="flex"
 /* função async separada para pegar dados  envia-los para editar */
 
 
- /* Modal da página do prontuário */
-function modalNewSectionMr(){
-const modalContainer = document.querySelector('.modalNewSection');
-const backColorModal =  document.querySelector('.backgroundModalInputMr');
 
-if (modalContainer) {
-    modalContainer.style.display = 'flex';
-    
-    backColorModal.style.display = 'flex';
-  }
-  else {
-    modalContainer.style.display = 'none';
 
-    backColorModal.style.display = 'none';
-    
-  }
 
-}
-/* fecha modal  protuário*/
-function closeModalMr(){
-  const fechaModalForaDaDiv4 = document.querySelector('.backgroundModalInputMr');
-  fechaModalForaDaDiv4.style.display="none"
-}
-/* fechando modal do protuário fora da janela */
-window.addEventListener('click',(event) =>{
-   
-  const fechaModalForaDaDiv4 = document.querySelector('.backgroundModalInputMr');
- 
-  if (event.target === fechaModalForaDaDiv4){
-
-      fechaModalForaDaDiv4.style.display="none"
-  }
-})  
 
 /* Pegando dados dos pacientes */
 const getDataPatientsInApi = async () => {
@@ -456,7 +420,10 @@ async function removeUserDate (id) {
   await fetch(`http://localhost:3000/pacientes/${id}`, {
       method: 'DELETE'
   })
- 
+ //reload p/ atualizar informações
+  setTimeout(() => {
+    document.location.reload();
+  }, 500);
 } 
 
 
@@ -494,6 +461,11 @@ const dataModifyValue = {
 } else {
     userDateApi(dataModifyValue)
 }
+//reload p/ atualizar informações
+setTimeout(() => {
+  document.location.reload();
+}, 1000);
+
   }
 
 
@@ -540,51 +512,10 @@ const newPatient = {
 
 }
 
-async function newSectionData() {
-  const dateWhas = document.querySelector('#dateDayMonthYear');
-  const begning = document.querySelector('#initialTime');
-  const ending = document.querySelector('#endTime');
-  const title = document.querySelector('#sectionTitle');
-  const notesSection = document.querySelector('#notes');
-  const moneyValue = document.querySelector('#howMuchMoney');
-  const payType = document.querySelector('#paymentType');
-  const chargeOrNot = document.querySelector('#debtTypeOne');
-  const chargeOrNotTwo = document.querySelector('#debtTypeTwo');
-
-
-  const dataNewSection = {
-
-    dateValue: dateWhas.value,
-    starTime: begning.value,
-    finishTime: ending.value,
-    titleValue: title.value,
-    notesValue: notesSection.value,
-    cashValue: moneyValue.value,
-    valueType: payType.value,
-    debt: chargeOrNot.value,
-    debtTwo: chargeOrNotTwo.value,
-  }
-  
-  console.log(dataNewSection)
-  await makingPostMedicalRecordPage(dataNewSection)
-
-
-}
-
-async function makingPostMedicalRecordPage(newSectionData) {
-  return fetch('http://localhost:3000/prontuarioSessao', {
-      method: "POST",
-        headers: {
-          'Accept': 'application/json, text/plain, */*',
-          'Content-Type':'application/json'
-        }, 
-        body: JSON.stringify(newSectionData)
-    
-      })
-}
-
 /* chamando funções e colocando observadores*/
 btnSaveInputDate.addEventListener('click',sendingUserDate); 
 getDataPatientsInApi(); 
 modifyBtn.addEventListener('click',editDataUsers);
+
+
 

@@ -7,7 +7,8 @@
 <link rel="stylesheet" href="./css/medical-record-style.css">    
 <link rel="stylesheet" href="./css/main.css">
 <script src="https://kit.fontawesome.com/d0129d2559.js" crossorigin="anonymous" defer></script>
-<script src="./js/app.js"></script>
+
+<script src="./js/medical-record.js" defer></script>
     <title>Protuário do paciente</title>
 </head>
 <body>
@@ -16,7 +17,7 @@
             <figure class="imgLogo"><img src="./img/logo-header-patients-page.png" alt=""></figure>
         </div>
         <a href="./patients.html" target="_self" id="linkToGoBack">Voltar a Listagem</a>
-        <div class="spaceHeader" onclick="changeArrowAndOpenModal()" >
+        <div class="spaceHeader" onclick="changeArrowAndOpenModal()">
             <div class="idUser">
                 <p>Bem-vindo(a)<span class="spaceIcon">usuário</span>
                     <i class="fa-solid fa-caret-up arrowStyle " id="arrowUpStyle"></i>
@@ -55,9 +56,9 @@
         </div>
                         </div>
                         </div>
-                        <!-- onclick="addHtml()"  -->
+                       
     </div>
-                        <!-- onclick="addHtml()"  -->
+                       
 
 <div class="flexWrapper">
         
@@ -86,7 +87,7 @@
     <div class="flexSection">
     <section class="addDataAboutPatients">
         <div class="alignBtn">
-            <img src="./img/seasionIcon.svg" class="imgsSection" alt="">
+            <img onclick="modalNewSectionMr()" src="./img/seasionIcon.svg" class="imgsSection" alt="">
             <button class="btnSections" onclick="modalNewSectionMr()">Sessão</button>
         </div>
         <div class="alignBtn">
