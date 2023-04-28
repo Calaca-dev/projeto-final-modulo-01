@@ -145,7 +145,7 @@ schoolLevel.value=""
     backColorModal.style.display = 'none';
     
   }
-
+ history.go();
 }
 
 function closeModal() {
@@ -203,21 +203,6 @@ async function modalShowDataUsers(id) {
   document.querySelector('#UsermaritalStatus').value = newPatient.loveStatus;
   document.querySelector('#userMotherName').value = newPatient.fatherFigure;
   document.querySelector('#userFatherName').value = newPatient.motherFigure;
-
- const cpfValue = document.querySelector('#cpfUser');
-  const nameValue = document.querySelector('#nameUser');
-  const birthValue = document.querySelector('#dateBirthUser');
-  const emailValue = document.querySelector('#emailUser');
-  const genderValue = document.querySelector('#userGender');
-  const userCountry = document.querySelector('#userNationality');
-  const whereUserBorn = document.querySelector('#userNaturalness');
-  const profession = document.querySelector('#userProfession');
-  const schoolLevel = document.querySelector('#userScholarity');
-  const relationshipStatus = document.querySelector('#UsermaritalStatus');
-  const momName = document.querySelector('#userMotherName');
-  const dadName = document.querySelector('#userFatherName');
-
-
 
 
   /* Usuando dom para mudar cor dos inputs */
