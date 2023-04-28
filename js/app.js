@@ -162,7 +162,7 @@ window.addEventListener('click',(event) =>{
 /* modal vizualição */
 
 async function modalShowDataUsers(id) {
-  const apiURL = 'https://projento-modulo-um-arnia.onrender.com';
+  const apiUrl = 'https://projeto-modulo-um-arnia.onrender.com';
   const styleChangeToView = document.querySelector('#deleteModalEndPart');
   
   const changingTitleModal = document.querySelector('#hideInModalShow')
@@ -180,7 +180,7 @@ async function modalShowDataUsers(id) {
   /* OBS não funcionaou pegando só a class de estilização tive que pegar por id */
 
   
-  const apiRequsition = await fetch(`http://localhost:3000/pacientes/${id}`)
+  const apiRequsition = await fetch(apiUrl+`/pacientes/${id}`)
   const newPatient = await apiRequsition.json();
   
   document.querySelector('#cpfUser').value = newPatient.cpf;
@@ -269,7 +269,7 @@ async function modalShowDataUsers(id) {
   modifyingData  = id;
    modalInputsNewSubscribe();
    
-const apiURL = 'https://projento-modulo-um-arnia.onrender.com';
+const apiUrl = 'https://projeto-modulo-um-arnia.onrender.com';
 
    /* mostrando só titulo certo */
  const titleView = document.querySelector('#modalViewTitle');    
@@ -283,7 +283,7 @@ titleModify.style.display="flex"
    btnSaveInputDate.style.display="none";
    modifyBtn.style.display="flex";
 
-  const apiRequsition = await fetch(`http://localhost:3000/pacientes/${id}`)
+  const apiRequsition = await fetch(apiUrl+`/pacientes/${id}`)
   const newPatient = await apiRequsition.json();
   
   document.querySelector('#cpfUser').value = newPatient.cpf;
@@ -311,9 +311,9 @@ titleModify.style.display="flex"
 /* Pegando dados dos pacientes */
 const getDataPatientsInApi = async () => {
 
-  const apiURL = 'https://projento-modulo-um-arnia.onrender.com';
+  const apiUrl = 'https://projeto-modulo-um-arnia.onrender.com';
 
-      const apiRequsition = await fetch ('http://localhost:3000/pacientes');
+      const apiRequsition = await fetch (apiUrl+'/pacientes');
       const patientSubscribe = await apiRequsition.json()
      
 
@@ -352,9 +352,9 @@ const getDataPatientsInApi = async () => {
 
 async function userDateApi(newPatient) {
 
-  const apiURL = 'https://projento-modulo-um-arnia.onrender.com';
+  const apiUrl = 'https://projeto-modulo-um-arnia.onrender.com';
 
-  return fetch('http://localhost:3000/pacientes', {
+  return fetch(apiUrl+'/pacientes', {
    method: 'POST',
      headers: {
        'Accept': 'application/json, text/plain, */*',
@@ -368,9 +368,9 @@ async function userDateApi(newPatient) {
 
 /* Fazendo método PUT */
 const putMethod = async (id,modifyDatePatient) => {
-  const apiURL = 'https://projento-modulo-um-arnia.onrender.com';
+  const apiUrl = 'https://projeto-modulo-um-arnia.onrender.com';
 
-  await fetch(`http://localhost:3000/pacientes/${id}`, {
+  await fetch(apiUrl+`/pacientes/${id}`, {
       method: 'PUT',
       headers: {
           'Accept': 'application/json, text/plain, */*',
@@ -384,10 +384,10 @@ const putMethod = async (id,modifyDatePatient) => {
 /* Fazendo o método DELETE */
 
 async function removeUserDate (id) {
-  const apiURL = 'https://projento-modulo-um-arnia.onrender.com';
+  const apiUrl = 'https://projeto-modulo-um-arnia.onrender.com';
 
  
-  await fetch(`http://localhost:3000/pacientes/${id}`, {
+  await fetch(apiUrl+`/pacientes/${id}`, {
       method: 'DELETE'
   })
  //reload p/ atualizar informações
@@ -400,9 +400,9 @@ async function removeUserDate (id) {
 /* Pegando dados para modificar */
   const editDataUsers = async () =>{
 
-    const apiURL = 'https://projento-modulo-um-arnia.onrender.com';
+    const apiUrl = 'https://projeto-modulo-um-arnia.onrender.com';
 
-    const requisition = await fetch(`http://localhost:3000/pacientes/${modifyingData}`)
+    const requisition = await fetch(apiUrl+`/pacientes/${modifyingData}`)
     const editPatient = await requisition.json()
 
 
