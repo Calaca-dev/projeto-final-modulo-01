@@ -127,3 +127,47 @@ function closeModalMr(){
         })
   }
   
+  const addHtml = async () =>{
+
+    const apiURL = 'https://projeto-final-arnia-api.onrender.com/';
+
+     const apiRequsition = await fetch(apiURL+'/prontuarioSessao');
+     const addPatienSection = await apiRequsition.json();
+
+
+    const addingHtml = document.querySelector('.positionOfDinamicContent');
+    let addingSection ='';
+   
+    addPatienSection.forEach((userNewSection)=>{
+      addingSection = addingSection + `
+      <div class="mainAdd">
+      <hr class="alineSection">
+      <span>Filtrar por:</span>Todos<span><i class="fa-solid fa-caret-down arrowStyle"></i></span>
+  </div>
+  
+  
+  
+  <div class="flexCardPatient">
+    <div>   
+        <div class="fixedIcon">
+            <div class="bgIcon">
+                <figure><img src="./img/icon-section.png" alt=""></figure>
+            </div>
+        </div>
+        <div class="patientSection">
+            <div class="flexTopSection">
+                <h3 class="txtTitleDescription">${userNewSection.titleValue}</h3>
+                <p class="txtDescription">${userNewSection.dateValue}</p>
+            </div>
+            <button class="dotsToOpenModal"><img src="./img/dots-icon.png" alt=""></button>
+        </div>
+    </div>
+    <div class="bodyCard">
+        <p>${userNewSection.notesValue}</p>
+    </div>
+  </div>
+  
+      `
+      addingHtml.innerHTML = addingSection;
+    })
+    }
