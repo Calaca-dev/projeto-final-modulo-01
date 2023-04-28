@@ -61,9 +61,8 @@
       "motherFigure": ""
     },
     {
-      "id": 10,
       "cpf": "",
-      "name": "teste final de reload 03:15",
+      "name": "teste de funcionalidade no render",
       "birth": "",
       "email": "",
       "gender": "",
@@ -73,9 +72,9 @@
       "educationLevel": "",
       "loveStatus": "",
       "fatherFigure": "",
-      "motherFigure": ""
+      "motherFigure": "",
+      "id": 10
     }
-    
   ],
   "prontuarioSessao": [
     {
@@ -139,7 +138,6 @@
       "id": 5
     }
   ],
-
   "scripts": {
     "start": "node index.js"
   }
