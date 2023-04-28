@@ -4,7 +4,9 @@ const formDate = document.querySelector('.formModal')
 const modifyBtn = document.querySelector('.btnToEditDate');
 const takingDataForPut = document.querySelector('.callDataToMakePut');
 const editButton = document.querySelector('.BlueBorder')
+const inputSearch = document.querySelector('#search')
 let modifyingData = null;
+const apiUrl = 'https://projeto-modulo-um-arnia.onrender.com';
 
 
 /* Valores de input usados nos 3 form's */
@@ -162,7 +164,7 @@ window.addEventListener('click',(event) =>{
 /* modal vizualição */
 
 async function modalShowDataUsers(id) {
-  const apiUrl = 'https://projeto-modulo-um-arnia.onrender.com';
+  
   const styleChangeToView = document.querySelector('#deleteModalEndPart');
   
   const changingTitleModal = document.querySelector('#hideInModalShow')
@@ -268,9 +270,7 @@ async function modalShowDataUsers(id) {
  async function modalModifyData(id) {
   modifyingData  = id;
    modalInputsNewSubscribe();
-   
-const apiUrl = 'https://projeto-modulo-um-arnia.onrender.com';
-
+  
    /* mostrando só titulo certo */
  const titleView = document.querySelector('#modalViewTitle');    
  const titleModify = document.querySelector('#titleModalEditData');  
@@ -305,55 +305,57 @@ titleModify.style.display="flex"
 
 
 
+const renderData =(patients)=> {
+
+  
+  const puttingDateInHtml = document.querySelector('.dataSaveHereJSDinamic');
+
+  let dinamicHtmlJS ='';
+  patients.forEach((userDataValue)=> {
+    dinamicHtmlJS = dinamicHtmlJS+ `
+
+    <div class="flexIcons">
+    <tr class="showIndividualData">
+    
+      
+        <td onclick="modalShowDataUsers(${userDataValue.id})" class="topCell" id="rgPatient">${userDataValue.id}</td>
+      <td onclick="modalShowDataUsers(${userDataValue.id})" class="MiddleCellStyle" id="NameCell01">${userDataValue.name}</td>
+                    <td onclick="modalShowDataUsers(${userDataValue.id})" class="MiddleCellStyle" id="patientCpf">${userDataValue.cpf}</td>
+      
+    
+                  <td class="lastCellStyle">
+                          <figure class=" bordericonstyle  greenBorder">
+                          <a href="./medical-record.html" target="_blank"     class="linkMedicalRecordStyle"><img src="./img/calendar-icon.svg" alt=""></a>
+                          </figure>
+                          <figure class="bordericonstyle blueBorder">
+                          <img onclick="modalModifyData(${userDataValue.id})" src="./img/pen-edit.svg" alt=""></figure>
+                          <figure class="bordericonstyle redBorder" onclick="removeUserDate(${userDataValue.id})"><img src="./img/trash-icon.svg" alt=""></figure>
+                          </div>
+                          </tr>
+    `
+    puttingDateInHtml.innerHTML = dinamicHtmlJS;
+  })
+
+}   
 
 
 
 /* Pegando dados dos pacientes */
 const getDataPatientsInApi = async () => {
 
-  const apiUrl = 'https://projeto-modulo-um-arnia.onrender.com';
+ 
 
       const apiRequsition = await fetch (apiUrl+'/pacientes');
       const patientSubscribe = await apiRequsition.json()
      
-
-      const puttingDateInHtml = document.querySelector('.dataSaveHereJSDinamic');
-
-      let dinamicHtmlJS ='';
-      patientSubscribe.forEach((userDataValue)=> {
-        dinamicHtmlJS = dinamicHtmlJS+ `
-
-    
-        <div class="flexIcons">
-        <tr class="showIndividualData">
-        
-          
-            <td onclick="modalShowDataUsers(${userDataValue.id})" class="topCell" id="rgPatient">${userDataValue.id}</td>
-          <td onclick="modalShowDataUsers(${userDataValue.id})" class="MiddleCellStyle" id="NameCell01">${userDataValue.name}</td>
-                        <td onclick="modalShowDataUsers(${userDataValue.id})" class="MiddleCellStyle" id="patientCpf">${userDataValue.cpf}</td>
-          
-        
-                      <td class="lastCellStyle">
-                              <figure class=" bordericonstyle  greenBorder">
-                              <a href="./medical-record.html" target="_blank"     class="linkMedicalRecordStyle"><img src="./img/calendar-icon.svg" alt=""></a>
-                              </figure>
-                              <figure class="bordericonstyle blueBorder">
-                              <img onclick="modalModifyData(${userDataValue.id})" src="./img/pen-edit.svg" alt=""></figure>
-                              <figure class="bordericonstyle redBorder" onclick="removeUserDate(${userDataValue.id})"><img src="./img/trash-icon.svg" alt=""></figure>
-                              </div>
-                              </tr>
-        `
-        puttingDateInHtml.innerHTML = dinamicHtmlJS;
-      })
+   renderData(patientSubscribe);
+      
 
     }   
 
 /* Fazendo o método POST */
 
 async function userDateApi(newPatient) {
-
-  const apiUrl = 'https://projeto-modulo-um-arnia.onrender.com';
-
   return fetch(apiUrl+'/pacientes', {
    method: 'POST',
      headers: {
@@ -368,8 +370,6 @@ async function userDateApi(newPatient) {
 
 /* Fazendo método PUT */
 const putMethod = async (id,modifyDatePatient) => {
-  const apiUrl = 'https://projeto-modulo-um-arnia.onrender.com';
-
   await fetch(apiUrl+`/pacientes/${id}`, {
       method: 'PUT',
       headers: {
@@ -384,8 +384,6 @@ const putMethod = async (id,modifyDatePatient) => {
 /* Fazendo o método DELETE */
 
 async function removeUserDate (id) {
-  const apiUrl = 'https://projeto-modulo-um-arnia.onrender.com';
-
  
   await fetch(apiUrl+`/pacientes/${id}`, {
       method: 'DELETE'
@@ -399,9 +397,6 @@ async function removeUserDate (id) {
 
 /* Pegando dados para modificar */
   const editDataUsers = async () =>{
-
-    const apiUrl = 'https://projeto-modulo-um-arnia.onrender.com';
-
     const requisition = await fetch(apiUrl+`/pacientes/${modifyingData}`)
     const editPatient = await requisition.json()
 
@@ -438,15 +433,7 @@ setTimeout(() => {
   document.location.reload();
 }, 1000);
 
-  }
-
-
-
-    
-
-
-
- 
+  } 
 /* Função que pega os dados colocados pelos usuários da página de paciente */
 async function sendingUserDate () {
   
@@ -480,8 +467,18 @@ const newPatient = {
 
   }
     console.log(newPatient);
-  await userDateApi(newPatient);  
+  await userDateApi(newPatient);
 
+}
+
+/* Search bar function */
+
+const filter = async () => {
+ const  searchUser = inputSearch.value;
+ const requisition = await fetch(apiUrl+`/pacientes?name_like=${searchUser}`)
+ const data = await requisition.json()
+
+ renderData(data);
 }
 
 /* chamando funções e colocando observadores*/
@@ -489,5 +486,6 @@ btnSaveInputDate.addEventListener('click',sendingUserDate);
 getDataPatientsInApi(); 
 modifyBtn.addEventListener('click',editDataUsers);
 
+document.querySelector('.btnSearch').addEventListener('click',filter)
 
 
