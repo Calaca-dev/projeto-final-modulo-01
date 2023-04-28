@@ -75,6 +75,7 @@
       "fatherFigure": "",
       "motherFigure": ""
     }
+    
   ],
   "prontuarioSessao": [
     {
@@ -137,5 +138,9 @@
       "debtTwo": "on",
       "id": 5
     }
-  ]
+  ],
+
+  "scripts": {
+    "start": "node index.js"
+  }
 }

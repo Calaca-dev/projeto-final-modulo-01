@@ -162,7 +162,7 @@ window.addEventListener('click',(event) =>{
 /* modal vizualição */
 
 async function modalShowDataUsers(id) {
-  const apiURL = 'https://projeto-final-arnia-api.onrender.com/';
+  const apiURL = 'https://projento-modulo-um-arnia.onrender.com';
   const styleChangeToView = document.querySelector('#deleteModalEndPart');
   
   const changingTitleModal = document.querySelector('#hideInModalShow')
@@ -269,7 +269,7 @@ async function modalShowDataUsers(id) {
   modifyingData  = id;
    modalInputsNewSubscribe();
    
-const apiURL = 'https://projeto-final-arnia-api.onrender.com/';
+const apiURL = 'https://projento-modulo-um-arnia.onrender.com';
 
    /* mostrando só titulo certo */
  const titleView = document.querySelector('#modalViewTitle');    
@@ -311,7 +311,7 @@ titleModify.style.display="flex"
 /* Pegando dados dos pacientes */
 const getDataPatientsInApi = async () => {
 
-  const apiURL = 'https://projeto-final-arnia-api.onrender.com/';
+  const apiURL = 'https://projento-modulo-um-arnia.onrender.com';
 
       const apiRequsition = await fetch (apiURL+'/pacientes');
       const patientSubscribe = await apiRequsition.json()
@@ -352,7 +352,7 @@ const getDataPatientsInApi = async () => {
 
 async function userDateApi(newPatient) {
 
-  const apiURL = 'https://projeto-final-arnia-api.onrender.com/';
+  const apiURL = 'https://projento-modulo-um-arnia.onrender.com';
 
   return fetch(apiURL+'/pacientes', {
    method: 'POST',
@@ -368,7 +368,7 @@ async function userDateApi(newPatient) {
 
 /* Fazendo método PUT */
 const putMethod = async (id,modifyDatePatient) => {
-  const apiURL = 'https://projeto-final-arnia-api.onrender.com/';
+  const apiURL = 'https://projento-modulo-um-arnia.onrender.com';
 
   await fetch(apiURL+`/pacientes/${id}`, {
       method: 'PUT',
@@ -384,7 +384,7 @@ const putMethod = async (id,modifyDatePatient) => {
 /* Fazendo o método DELETE */
 
 async function removeUserDate (id) {
-  const apiURL = 'https://projeto-final-arnia-api.onrender.com/';
+  const apiURL = 'https://projento-modulo-um-arnia.onrender.com';
 
  
   await fetch(apiURL+`/pacientes/${id}`, {
@@ -400,7 +400,7 @@ async function removeUserDate (id) {
 /* Pegando dados para modificar */
   const editDataUsers = async () =>{
 
-    const apiURL = 'https://projeto-final-arnia-api.onrender.com/';
+    const apiURL = 'https://projento-modulo-um-arnia.onrender.com';
 
     const requisition = await fetch(apiURL+`/pacientes/${modifyingData}`)
     const editPatient = await requisition.json()
