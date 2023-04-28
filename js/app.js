@@ -5,6 +5,7 @@ const modifyBtn = document.querySelector('.btnToEditDate');
 const takingDataForPut = document.querySelector('.callDataToMakePut');
 const editButton = document.querySelector('.BlueBorder')
 let modifyingData = null;
+const apiURL = 'https://projeto-final-arnia-api.onrender.com/';
 
 /* Valores de input usados nos 3 form's */
   const cpfValue = document.querySelector('#cpfUser');
@@ -145,7 +146,7 @@ function closeModal() {
   modalContainer.style.display = 'none';
   mainContainer.style.display = 'flex';
   backColorModal.style.display = 'none';
-
+    
 }
  /* Fechando modal de confirmação quando toca fora modal novo cadastro*/
 window.addEventListener('click',(event) =>{
@@ -178,7 +179,7 @@ async function modalShowDataUsers(id) {
   /* OBS não funcionaou pegando só a class de estilização tive que pegar por id */
 
   
-  const apiRequsition = await fetch(`http://localhost:3000/pacientes/${id}`)
+  const apiRequsition = await fetch(apiURL+`/pacientes/${id}`)
   const newPatient = await apiRequsition.json();
   
   document.querySelector('#cpfUser').value = newPatient.cpf;
@@ -279,7 +280,7 @@ titleModify.style.display="flex"
    btnSaveInputDate.style.display="none";
    modifyBtn.style.display="flex";
 
-  const apiRequsition = await fetch(`http://localhost:3000/pacientes/${id}`)
+  const apiRequsition = await fetch(apiURL+`/pacientes/${id}`)
   const newPatient = await apiRequsition.json();
   
   document.querySelector('#cpfUser').value = newPatient.cpf;
@@ -306,7 +307,7 @@ titleModify.style.display="flex"
 
 /* Pegando dados dos pacientes */
 const getDataPatientsInApi = async () => {
-      const apiRequsition = await fetch ('http://localhost:3000/pacientes');
+      const apiRequsition = await fetch (apiURL+'/pacientes');
       const patientSubscribe = await apiRequsition.json()
      
 
@@ -342,7 +343,7 @@ const getDataPatientsInApi = async () => {
     }   
 
   const addHtml = async () =>{
-     const apiRequsition = await fetch('http://localhost:3000/prontuarioSessao');
+     const apiRequsition = await fetch(apiURL+'/prontuarioSessao');
      const addPatienSection = await apiRequsition.json();
 
 
@@ -387,7 +388,7 @@ const getDataPatientsInApi = async () => {
 /* Fazendo o método POST */
 
 async function userDateApi(newPatient) {
-  return fetch('http://localhost:3000/pacientes', {
+  return fetch(apiURL+'/pacientes', {
    method: 'POST',
      headers: {
        'Accept': 'application/json, text/plain, */*',
@@ -401,7 +402,7 @@ async function userDateApi(newPatient) {
 
 /* Fazendo método PUT */
 const putMethod = async (id,modifyDatePatient) => {
-  await fetch(`http://localhost:3000/pacientes/${id}`, {
+  await fetch(apiURL+`/pacientes/${id}`, {
       method: 'PUT',
       headers: {
           'Accept': 'application/json, text/plain, */*',
@@ -417,7 +418,7 @@ const putMethod = async (id,modifyDatePatient) => {
 async function removeUserDate (id) {
 
  
-  await fetch(`http://localhost:3000/pacientes/${id}`, {
+  await fetch(apiURL+`/pacientes/${id}`, {
       method: 'DELETE'
   })
  //reload p/ atualizar informações
@@ -430,7 +431,7 @@ async function removeUserDate (id) {
 /* Pegando dados para modificar */
   const editDataUsers = async () =>{
 
-    const requisition = await fetch(`http://localhost:3000/pacientes/${modifyingData}`)
+    const requisition = await fetch(apiURL+`/pacientes/${modifyingData}`)
     const editPatient = await requisition.json()
 
 
