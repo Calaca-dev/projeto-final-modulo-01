@@ -485,7 +485,6 @@ const filter = async () => {
 btnSaveInputDate.addEventListener('click',sendingUserDate); 
 getDataPatientsInApi(); 
 modifyBtn.addEventListener('click',editDataUsers);
-
 document.querySelector('.btnSearch').addEventListener('click',filter)
 
 

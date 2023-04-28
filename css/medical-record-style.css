@@ -184,6 +184,7 @@ background-color: white;
 margin-top: 2.9375em;
 display: flex;
 align-items: center;
+position: relative;
 justify-content: center;
 flex-direction: column;
 border-left:4px solid #2F80ED ;
@@ -230,9 +231,11 @@ border-left:4px solid #2F80ED ;
   
 
 }
-/* .fixedIcon {
-
-} */
+.fixedIcon {
+ position: absolute;
+ bottom:85%;
+ left: 2%;
+} 
 .imgFactStyle {
     width: 1.59125em;
     height: 1.59125em;
@@ -258,11 +261,11 @@ border-left:4px solid #2F80ED ;
 
 .modalNewSection {
     width:42.125em;
-    height: fit-content;
+    height: 70%;
     background-color: white;
     display: flex;
     flex-wrap: wrap;
-  
+   overflow-y: scroll;
     align-items: center;
     border-radius:8px;
     padding: 2em;

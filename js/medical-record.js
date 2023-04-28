@@ -90,8 +90,7 @@ function closeModalMr(){
     const notesSection = document.querySelector('#notes');
     const moneyValue = document.querySelector('#howMuchMoney');
     const payType = document.querySelector('#paymentType');
-    const chargeOrNot = document.querySelector('#debtTypeOne');
-    const chargeOrNotTwo = document.querySelector('#debtTypeTwo');
+    const chargeOrNot= document.querySelector('[name=debt]:checked')
   
   
     const dataNewSection = {
@@ -104,15 +103,15 @@ function closeModalMr(){
       cashValue: moneyValue.value,
       valueType: payType.value,
       debt: chargeOrNot.value,
-      debtTwo: chargeOrNotTwo.value,
+      
     }
     
     console.log(dataNewSection)
     await makingPostMedicalRecordPage(dataNewSection)
   
-    setTimeout(() => {
+  /*   setTimeout(() => {
         document.location.reload();
-      }, 500);
+      }, 500); */
   }
 //   Fazendo o método POST salvar ás    informações.
   async function makingPostMedicalRecordPage(newSectionData) {
