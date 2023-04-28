@@ -5,7 +5,7 @@ const modifyBtn = document.querySelector('.btnToEditDate');
 const takingDataForPut = document.querySelector('.callDataToMakePut');
 const editButton = document.querySelector('.BlueBorder')
 let modifyingData = null;
-const apiURL = 'https://projeto-final-arnia-api.onrender.com/';
+
 
 /* Valores de input usados nos 3 form's */
   const cpfValue = document.querySelector('#cpfUser');
@@ -162,6 +162,7 @@ window.addEventListener('click',(event) =>{
 /* modal vizualição */
 
 async function modalShowDataUsers(id) {
+  const apiURL = 'https://projeto-final-arnia-api.onrender.com/';
   const styleChangeToView = document.querySelector('#deleteModalEndPart');
   
   const changingTitleModal = document.querySelector('#hideInModalShow')
@@ -268,6 +269,8 @@ async function modalShowDataUsers(id) {
   modifyingData  = id;
    modalInputsNewSubscribe();
    
+const apiURL = 'https://projeto-final-arnia-api.onrender.com/';
+
    /* mostrando só titulo certo */
  const titleView = document.querySelector('#modalViewTitle');    
  const titleModify = document.querySelector('#titleModalEditData');  
@@ -307,6 +310,9 @@ titleModify.style.display="flex"
 
 /* Pegando dados dos pacientes */
 const getDataPatientsInApi = async () => {
+
+  const apiURL = 'https://projeto-final-arnia-api.onrender.com/';
+
       const apiRequsition = await fetch (apiURL+'/pacientes');
       const patientSubscribe = await apiRequsition.json()
      
@@ -343,6 +349,9 @@ const getDataPatientsInApi = async () => {
     }   
 
   const addHtml = async () =>{
+
+    const apiURL = 'https://projeto-final-arnia-api.onrender.com/';
+
      const apiRequsition = await fetch(apiURL+'/prontuarioSessao');
      const addPatienSection = await apiRequsition.json();
 
@@ -388,6 +397,9 @@ const getDataPatientsInApi = async () => {
 /* Fazendo o método POST */
 
 async function userDateApi(newPatient) {
+
+  const apiURL = 'https://projeto-final-arnia-api.onrender.com/';
+
   return fetch(apiURL+'/pacientes', {
    method: 'POST',
      headers: {
@@ -402,6 +414,8 @@ async function userDateApi(newPatient) {
 
 /* Fazendo método PUT */
 const putMethod = async (id,modifyDatePatient) => {
+  const apiURL = 'https://projeto-final-arnia-api.onrender.com/';
+
   await fetch(apiURL+`/pacientes/${id}`, {
       method: 'PUT',
       headers: {
@@ -416,6 +430,7 @@ const putMethod = async (id,modifyDatePatient) => {
 /* Fazendo o método DELETE */
 
 async function removeUserDate (id) {
+  const apiURL = 'https://projeto-final-arnia-api.onrender.com/';
 
  
   await fetch(apiURL+`/pacientes/${id}`, {
@@ -430,6 +445,8 @@ async function removeUserDate (id) {
 
 /* Pegando dados para modificar */
   const editDataUsers = async () =>{
+    
+    const apiURL = 'https://projeto-final-arnia-api.onrender.com/';
 
     const requisition = await fetch(apiURL+`/pacientes/${modifyingData}`)
     const editPatient = await requisition.json()
