@@ -42,7 +42,7 @@ body {
     background-color:white;
     border-radius: 8px;
     margin:0em 0em 2.420625em 7.15625em ;
-
+    padding-left: 1em;    
 }
 
 .inputStyle::placeholder {

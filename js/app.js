@@ -3,9 +3,10 @@ const btnSaveInputDate = document.querySelector('.salveBtn');
 const formDate = document.querySelector('.formModal')
 const modifyBtn = document.querySelector('.btnToEditDate');
 const takingDataForPut = document.querySelector('.callDataToMakePut');
+const editButton = document.querySelector('.BlueBorder')
+let modifyingData = null;
 
-
-
+/* Valores de input usados nos 3 form's */
   const cpfValue = document.querySelector('#cpfUser');
   const nameValue = document.querySelector('#nameUser');
   const birthValue = document.querySelector('#dateBirthUser');
@@ -233,7 +234,9 @@ async function modalShowDataUsers(id) {
   momName.style.backgroundColor="#E0E0E0";
   dadName.style.backgroundColor="#E0E0E0";
   
-    
+  /* Salvando alterações */  
+
+
 }
 
 
@@ -279,9 +282,10 @@ async function modalShowDataUsers(id) {
 })  
   
 
-/* Função do modal edição */
+/*modal edição*/
 
  async function modalModifyData(id) {
+  modifyingData  = id;
    modalInputsNewSubscribe();
    
    /* mostrando só titulo certo */
@@ -298,7 +302,7 @@ titleModify.style.display="flex"
 
   const apiRequsition = await fetch(`http://localhost:3000/pacientes/${id}`)
   const newPatient = await apiRequsition.json();
-
+  
   document.querySelector('#cpfUser').value = newPatient.cpf;
   document.querySelector('#nameUser').value = newPatient.name;
   document.querySelector('#dateBirthUser').value = newPatient.birth;
@@ -311,8 +315,11 @@ titleModify.style.display="flex"
   document.querySelector('#UsermaritalStatus').value = newPatient.loveStatus;
   document.querySelector('#userMotherName').value = newPatient.fatherFigure;
   document.querySelector('#userFatherName').value = newPatient.motherFigure;
-
+  
  }
+
+/* função async separada para pegar dados  envia-los para editar */
+
 
  /* Modal da página do prontuário */
 function modalNewSectionMr(){
@@ -355,6 +362,7 @@ const getDataPatientsInApi = async () => {
      
 
       const puttingDateInHtml = document.querySelector('.dataSaveHereJSDinamic');
+
       let dinamicHtmlJS ='';
       patientSubscribe.forEach((userDataValue)=> {
         dinamicHtmlJS = dinamicHtmlJS+ `
@@ -375,7 +383,7 @@ const getDataPatientsInApi = async () => {
                               </figure>
                               <figure class="bordericonstyle blueBorder">
                               <img onclick="modalModifyData(${userDataValue.id})" src="./img/pen-edit.svg" alt=""></figure>
-                              <figure class="bordericonstyle redBorder" onclick="removeUserDate()"><img src="./img/trash-icon.svg" alt=""></figure>
+                              <figure class="bordericonstyle redBorder" onclick="removeUserDate(${userDataValue.id})"><img src="./img/trash-icon.svg" alt=""></figure>
                               </div>
                               </tr>
         `
@@ -384,86 +392,129 @@ const getDataPatientsInApi = async () => {
 
     }   
 
-    function addHtml(){
-    const addingHtml = document.querySelector('.addDinamicSection');
+  const addHtml = async () =>{
+     const apiRequsition = await fetch('http://localhost:3000/prontuarioSessao');
+     const addPatienSection = await apiRequsition.json();
+
+
+    const addingHtml = document.querySelector('.positionOfDinamicContent');
     let addingSection ='';
    
-    addingSection = addingSection + `
-
-    <div class="mainAdd">
-    <hr class="alineSection">
-    <span>Filtrar por:</span>Todos<span><i class="fa-solid fa-caret-down arrowStyle"></i></span></div>
-
-    
-    
-</div>
-
-
-    <div class="flexCardPatient">
+    addPatienSection.forEach((userNewSection)=>{
+      addingSection = addingSection + `
+      <div class="mainAdd">
+      <hr class="alineSection">
+      <span>Filtrar por:</span>Todos<span><i class="fa-solid fa-caret-down arrowStyle"></i></span>
+  </div>
+  
+  
+  
+  <div class="flexCardPatient">
     <div>
-        <div class="bgIcon">
-            <figure><img src="./img/icon-section.png" alt=""></figure>
+        <div class="fixedIcon">
+            <div class="bgIcon">
+                <figure><img src="./img/icon-section.png" alt=""></figure>
+            </div>
         </div>
         <div class="patientSection">
             <div class="flexTopSection">
-                <h3 class="txtTitleDescription">Titulo</h3>
-                <p class="txtDescription">22 de setembro de 2022</p>
+                <h3 class="txtTitleDescription">${userNewSection.titleValue}</h3>
+                <p class="txtDescription">${userNewSection.dateValue}</p>
             </div>
-            <button><img src="./img/dots-icon.png" alt=""></button>
+            <button class="dotsToOpenModal"><img src="./img/dots-icon.png" alt=""></button>
         </div>
     </div>
     <div class="bodyCard">
-
-        <p>A paciente relatou que estava tendo dificuldades com sua família e amigos próximos, pois demostra ansiedade diante de fatos cotidianos, resultando em reações de raiva com as pessoas que estão próximas a ela. Além disso, relatou brigas recentes com seus pais e namorado e, após a briga, ficou mal diante</p>
-
+        <p>${userNewSection.notesValue}</p>
     </div>
-</div>
-    `
-    addingHtml.innerHTML = addingSection;
-  }
+  </div>
+  
+      `
+      addingHtml.innerHTML = addingSection;
+    })
+    }
 
+  
 /* Fazendo o método POST */
 
- async function userDateApi(newPatient) {
-     return fetch('http://localhost:3000/pacientes', {
-      method: 'POST',
-        headers: {
+async function userDateApi(newPatient) {
+  return fetch('http://localhost:3000/pacientes', {
+   method: 'POST',
+     headers: {
+       'Accept': 'application/json, text/plain, */*',
+       'Content-Type':'application/json'
+     }, 
+     body: JSON.stringify(newPatient)
+ 
+   })
+   
+ } 
+
+/* Fazendo método PUT */
+const putMethod = async (id,modifyDatePatient) => {
+  await fetch(`http://localhost:3000/pacientes/${id}`, {
+      method: 'PUT',
+      headers: {
           'Accept': 'application/json, text/plain, */*',
-          'Content-Type':'application/json'
-        }, 
-        body: JSON.stringify(newPatient)
-    
-      })
-      
-    } 
-/* Fazendo o GET para pegar os dados e depois excluir */
-    const getQuestoes = async () => {
-      const requisicao = await fetch('http://localhost:3000/pacientes')
-      const questoes = await requisicao.json()
-      return questoes
+          'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(modifyDatePatient)
+  })
+
+}
+
+/* Fazendo o método DELETE */
+
+async function removeUserDate (id) {
+
+ 
+  await fetch(`http://localhost:3000/pacientes/${id}`, {
+      method: 'DELETE'
+  })
+ 
+} 
+
+
+/* Pegando dados para modificar */
+  const editDataUsers = async () =>{
+
+    const requisition = await fetch(`http://localhost:3000/pacientes/${modifyingData}`)
+    const editPatient = await requisition.json()
+
+
+modifyingData = editPatient
+/* Criando Objeto para com alterações */
+const dataModifyValue = {   
+
+    cpf:cpfValue.value,
+    name:nameValue.value,
+    birth:birthValue.value,
+    email:emailValue.value,
+    gender:genderValue.value,
+    country:userCountry.value,
+    bornIn:whereUserBorn.value,
+    job:profession.value,
+    educationLevel:schoolLevel.value,
+    loveStatus:relationshipStatus.value,
+    fatherFigure:momName.value,
+    motherFigure:dadName.value,
   }
-  
-   /* Fazendo o método DELETE */ 
-async function removeUserDate(id) {
-    await fetch(`http://localhost:3000/pacientes/${id}`, {
-        method: 'DELETE'
-    })
-    
+  console.log(modifyingData.id)
+  console.log(dataModifyValue)
+  /* Salvando alterações Feitas */
+   
+
+   if(modifyingData) {
+    putMethod(modifyingData.id,dataModifyValue)
+} else {
+    userDateApi(dataModifyValue)
 }
+  }
+
+
+
     
-const checkAndEditData = async (id) => {
-  const apiRequsition = await fetch ('http://localhost:3000/pacientes');
-  const patientSubscribe = await apiRequsition.json()
 
-  const dataOne = patientSubscribe.dataOnefind.find((alternativa)=> alternativa.number)
-
-}
-/* Fazendo o método PUT */
-
-
-
-/* id que está sendo atualizado */
-let idAtual = null;
 
 
  
@@ -503,8 +554,7 @@ const newPatient = {
   await userDateApi(newPatient);  
 
 }
-/* Função que pega os dados colocados pelos usuários da página de paciente */
-let dinamicId = 1;//tentat conserta erro no servidor(api) que não está pegando id
+
 async function newSectionData() {
   const dateWhas = document.querySelector('#dateDayMonthYear');
   const begning = document.querySelector('#initialTime');
@@ -518,7 +568,7 @@ async function newSectionData() {
 
 
   const dataNewSection = {
-    id:dinamicId,
+
     dateValue: dateWhas.value,
     starTime: begning.value,
     finishTime: ending.value,
@@ -529,10 +579,11 @@ async function newSectionData() {
     debt: chargeOrNot.value,
     debtTwo: chargeOrNotTwo.value,
   }
+  
   console.log(dataNewSection)
   await makingPostMedicalRecordPage(dataNewSection)
-  dinamicId = dinamicId + 1;
-  console.log(dinamicId)
+
+
 }
 
 async function makingPostMedicalRecordPage(newSectionData) {
@@ -550,4 +601,5 @@ async function makingPostMedicalRecordPage(newSectionData) {
 /* chamando funções e colocando observadores*/
 btnSaveInputDate.addEventListener('click',sendingUserDate); 
 getDataPatientsInApi(); 
-modifyBtn.addEventListener('click',modalModifyData)
+modifyBtn.addEventListener('click',editDataUsers);
+

@@ -37,48 +37,33 @@
             <button class="btnLogOut">Sair</button>
         </div>
     </header>
-
-<div class="wraperMedicalRecord">
-    
-    <div class="searchMedicalRecord">
-               
-                        <h1 id="titlePage">Prontuário</h1>
-                        
-                        <div class="searchArea">
-                            <input type="text" class="inputSearch" placeholder="Pesquisar">
-                            
-                            <button class="btnSearch">
-
-                                <span><i class="fa-solid fa-magnifying-glass btnSubStyle"></i>
-                                </span>Filtrar
-
-                            </button>
-                  </div>
-              </div>
-
-              <div class="flexSection">
-                <section class="addDataAboutPatients">
-                      <div class="alignBtn">            
-                          <img src="./img/seasionIcon.svg" class="imgsSection" alt="">  
-                          <button class="btnSections" onclick="modalNewSectionMr()" >Sessão</button>
+    <div class="flexSearch">
+        <div class="searchMedicalRecord">
+        
+            <h1 id="titlePage">Prontuário</h1>
+        
+            <div class="searchArea">
+                <input type="text" class="inputSearch" placeholder="Pesquisar">
+        
+                <button class="btnSearch">
+        
+                    <span><i class="fa-solid fa-magnifying-glass btnSubStyle"></i>
+                    </span>Filtrar
+        
+                </button>
+            </div>
+        </div>
+                        </div>
                         </div>
                         <!-- onclick="addHtml()"  -->
-                   
-                    <div class="alignBtn">
-                        <img src="./img/pinIcon.svg" alt=""class="imgsSection" >
-                        <button class="btnSections">Fato relevante</button>
-                    </div>
+    </div>
+                        <!-- onclick="addHtml()"  -->
+
+<div class="flexWrapper">
         
-                    
-                </section>
-                
-                   
-                    <div class="addDinamicSection"></div>
-                        </div>
-            </div>
-        
+    <div class="wraperMedicalRecord">
     <aside class="asideContent">
-                  
+    
         <h3 id="asideMainTitle">Identificação do paciente</h3>
         <div>
             <img src="./img/icon-person.svg" alt="" class="contentAsideImgs" ><span class="titleAsideStyle">Paciente</span>
@@ -97,8 +82,52 @@
         </div>
         <p>Lorem ipsum dolor</p>
     </aside>
+       
+    <div class="flexSection">
+    <section class="addDataAboutPatients">
+        <div class="alignBtn">
+            <img src="./img/seasionIcon.svg" class="imgsSection" alt="">
+            <button class="btnSections" onclick="modalNewSectionMr()">Sessão</button>
+        </div>
+        <div class="alignBtn">
+            <img src="./img/pinIcon.svg" alt="" class="imgsSection">
+            <button class="btnSections">Fato relevante</button>
+        </div>
+    </section>
+    <div class="positionOfDinamicContent">
     
-   
+            
+          <!-- HTMl dinâmico fato relevante -->
+          <div>
+              <div class="flexCardPatientRelevantFact">
+                  <div>
+                      <div class="fixedIcon">
+                          <div class="bgIconRelevantFact">
+                              <figure><img src="./img/thumb-tacks-fact.png" alt="" class="imgFactStyle"></figure>
+                          </div>
+                      </div>
+                      <div class="patientSection">
+                          <div class="flexTopSection">
+                              <h3 class="txtTitleDescription">Titulo</h3>
+                              <p class="txtDescription">22 de setembro de 2022</p>
+                          </div>
+                          <button class="dotsToOpenModal"><img src="./img/dots-icon.png" alt=""></button>
+                      </div>
+                  </div>
+                  <div class="bodyCard">
+                      <p>A paciente Saiu no meio da sessão</p>
+                  </div>
+              </div>
+          </div>
+          </div>
+      </div>
+    
+    
+      
+    </div>
+
+</div>
+
 
 <form class="formContainerRecord">
 <div class="backgroundModalInputMr">
@@ -208,8 +237,10 @@
     </div>
     
         </div>
+    </form>
+
+
 </div>
-</form>
 </body>
 </html>
 

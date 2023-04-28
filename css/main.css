@@ -237,7 +237,7 @@ div>#titlePage {
 .wraper {
     background-color: #E5E5E5;
     width: 100vw;
-    height: 100vh;
+    height: fit-content;
     display: flex;
     justify-content: center;
     align-items: center;
