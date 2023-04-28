@@ -479,6 +479,9 @@ const filter = async () => {
  const data = await requisition.json()
 
  renderData(data);
+ if (searchUser === "") {
+  renderData()
+   }
 }
 
 /* chamando funções e colocando observadores*/
