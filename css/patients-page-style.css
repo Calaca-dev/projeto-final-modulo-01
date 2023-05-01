@@ -57,23 +57,8 @@ th {
     padding: 1em;
 }
 
-.bordericonstyle {
-    width: 2em;
-    height: 1.5em;
-    border: 1px solid black;
-    border-radius: 8px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 4px 8px 4px 8px;
-    cursor: pointer;
-    box-shadow: 0px 4px 2px 0px #00000026;
 
-}
 
-.bordericonstyle:hover {
-    transform: scale(1.3);
-}
 
 .linkMedicalRecordStyle {
     display: flex;
@@ -81,24 +66,10 @@ th {
     align-items: center;
 }
 
-
-.greenBorder {
-    border: 1px solid #017849;
-}
-
-.blueBorder {
-    border: 1px solid #2F80ED;
-}
-
-.redBorder {
-    border: 1px solid #EB5757;
-}
-
 .flexIcons {
     width: 6.25em;
     height: fit-content;
     display: flex;
-
 
 }
 .showIndividualData {

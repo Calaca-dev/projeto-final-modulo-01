@@ -36,7 +36,7 @@ body {
 }
 
 .menu {
-    width: 100%;
+    width: 100;
     height: fit-content;
     display: flex;
     justify-content: center;
@@ -44,6 +44,8 @@ body {
     align-items: center;
     box-shadow: 0px 4px 10px 0px #0000001A;
     background-color: #E5E5E5;
+
+
 }
 
 /*  quando se vai fixar o menu/header na tela para a página ter um scroll tem se colocar um padding do mesmo tamanho do width do header */
@@ -262,7 +264,6 @@ div>#titlePage {
     cursor: pointer;
 }
 .btnSalveFlex {
-
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -305,4 +306,33 @@ div>#titlePage {
     inset: 0;
     background-color: rgba(0, 0, 0, 0.71);
     display: none;
+}
+
+
+.bordericonstyle {
+    width: 2em;
+    height: 1.5em;
+    border: 1px solid black;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4px 8px 4px 8px;
+    cursor: pointer;
+    box-shadow: 0px 4px 2px 0px #00000026;
+
+}
+.greenBorder {
+    border: 1px solid #017849;
+}
+
+.blueBorder {
+    border: 1px solid #2F80ED;
+}
+
+.redBorder {
+    border: 1px solid #EB5757;
+}
+.bordericonstyle:hover {
+    transform: scale(1.3);
 }

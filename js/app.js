@@ -237,10 +237,10 @@ async function modalShowDataUsers(id) {
 
     backColorModal.style.display = 'none';
   }
-  //reload p/ atualizar informações
+
   setTimeout(() => {
     document.location.reload();
-  }, 500);
+  }, 500); 
  }
 
  /* Fechando modal de sucesso*/
@@ -479,9 +479,7 @@ const filter = async () => {
  const data = await requisition.json()
 
  renderData(data);
- if (searchUser === "") {
-  renderData()
-   }
+ 
 }
 
 /* chamando funções e colocando observadores*/

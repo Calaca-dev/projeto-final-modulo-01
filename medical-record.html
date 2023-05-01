@@ -39,7 +39,7 @@
         </div>
     </header>
     <div class="flexSearch">
-        <div class="searchMedicalRecord">
+        <div class="searchMedicalRecord" id="toNotDisplay">
         
             <h1 id="titlePage">Prontuário</h1>
         
@@ -62,7 +62,7 @@
 
 <div class="flexWrapper">
         
-    <div class="wraperMedicalRecord">
+    <div class="wraperMedicalRecord" id="vanishContent">
     <aside class="asideContent">
     
         <h3 id="asideMainTitle">Identificação do paciente</h3>
@@ -91,39 +91,26 @@
             <button class="btnSections" onclick="modalNewSectionMr()">Sessão</button>
         </div>
         <div class="alignBtn">
-            <img src="./img/pinIcon.svg" alt="" class="imgsSection">
-            <button class="btnSections">Fato relevante</button>
+            <img  onclick="modalRf()" src="./img/pinIcon.svg" alt="" class="imgsSection">
+            <button class="btnSections" onclick="modalRf()" >Fato relevante</button>
         </div>
     </section>
-    <div class="positionOfDinamicContent">
-    
-            
+
+    <div class="mainAdd">
+        <hr class="alineSection">
+        <span>Filtrar por:</span>Todos<span><i class="fa-solid fa-caret-down arrowStyle"></i></span>
+    </div>
+    <div class="positionOfDinamicContent">    
           <!-- HTMl dinâmico fato relevante -->
           <div>
-              <div class="flexCardPatientRelevantFact">
-                  <div>
-                      <div class="fixedIcon">
-                          <div class="bgIconRelevantFact">
-                              <figure><img src="./img/thumb-tacks-fact.png" alt="" class="imgFactStyle"></figure>
-                          </div>
-                      </div>
-                      <div class="patientSection">
-                          <div class="flexTopSection">
-                              <h3 class="txtTitleDescription">Titulo</h3>
-                              <p class="txtDescription">22 de setembro de 2022</p>
-                          </div>
-                          <button class="dotsToOpenModal"><img src="./img/dots-icon.png" alt=""></button>
-                      </div>
-                  </div>
-                  <div class="bodyCard">
-                      <p>A paciente Saiu no meio da sessão</p>
-                  </div>
-              </div>
-          </div>
-          </div>
+            
+      </div>
+      <div class="dinamicRelevantFact">
+        <!-- HTMl dinâmico fato relevante -->
       </div>
     
-    
+
+</div>
       
     </div>
 
@@ -239,6 +226,100 @@
     
         </div>
     </form>
+
+    <!-- Modal Fato revelante -->
+
+    <div class="backgroundModalRf">
+            <form class="modalRelevantFact">
+                <div class="subscribeAndSearchModalRf">
+        
+                    <h2 class="titleModal">Novo Fato Relevante</h2>
+                    <i class="fa-sharp fa-solid fa-circle-xmark closeIconModal" style="color: #000000;" onclick="closeModalRf()"></i>
+        
+                </div>
+                <div class="flexTopPartRf">
+
+                    <div class="FlexinputArea">
+                        <label class="inputDescriptionStyle" for="dateOfSection">Data*</label>
+                        <input class="inputStyleTopPartDataRf" type="date" id="dateOfSection" name="dateOfSection"  placeholder="24/01/2023">
+                    </div>
+                    <div class="FlexinputArea">
+                        <label class="inputDescriptionStyle" for="titleRf">Título*</label>
+                        <input class="inputStyleTopPartTitle" type="text" id="titleRf" name="titleRf"  placeholder="Digite">
+                    </div>
+                </div>
+                <div class="flexTextArea">
+                    
+                    <label class="inputDescriptionStyle" for="keyPoint">Descrição*</label>
+                    <input class="areaTxtStyleRf" id="keyPoint" cols="30" rows="10"></input>
+                </div>
+                <div>
+                    <hr class="divisionLineRf">
+                                <div class="modalEndPartRelevantFact">
+                    <div>
+                        <p class="txtModalAlert"><sup>*</sup>Campos obrigatórios</p>
+                    </div>
+                    <div class="btnSalveFlex">
+                        <button class="cancelBtn" onclick="closeModalRf()">Cancelar</button>
+                        <button type="button" class="ModalMedicalRecordBtn" onclick="newRelevantFact()">Criar</button>
+                        <!-- Quando enviar fazendo a observação do click sempre colocar o type="button" para ele não mandar ás informações de forma padrão -->
+                    </div>
+                </div>
+    
+            </div>
+            </form>
+    </div>
+
+    <!-- Prontuário de cada sessão-->
+        <article class="sectionCard">
+            
+            <div class="flexBackBtn" onclick="vinishMedicalRecord()">
+    
+                <div class="backMrPart"> 
+                    <button class="btnBackMr" > <img src="./img/icon-smaller-then.png">Voltar</button></div>
+        </div>
+        
+            <div class="flextTitle">
+    
+                    <h1 class="titleSectionContent">Sessão</h1>
+            </div>
+             <div class="containerCardSection">
+    
+                <div class="flexTopPartCardSection">
+                 <div>
+                     <h3 class="titleDescriptionSection">Sessão 02</h3>
+                     <span class="dateDescription">22 de setembro de 2022 | 16:00h - 17:00h</span>
+                 </div>
+                 <div class="containerButtons">
+                     <figure class="bordericonstyle blueBorder">
+                         <img src="./img/pen-edit.svg" alt=""></figure>
+                         <figure class="bordericonstyle redBorder"><img src="./img/trash-icon.svg" alt=""></figure>
+                         </div>
+                 </div>
+                 <div class="containerNotes">
+                     <p class="textOfNotes">A paciente relatou que estava tendo dificuldades com sua família e amigos próximos, pois demostra<br> ansiedade diante de fatos cotidianos, resultando em reações de raiva com as pessoas que estão próximas<br> a ela. Além disso, relatou brigas recentes com seus pais e namorado e, após a briga, ficou mal diante da forma<br>como reagiu com as pessoas. Relatou também que muitas das pessoas que são próximas a ela a julgam por<br> seus comportamentos, o que a deixa desconfortável e ainda mais ansiosa.<br>
+                         A paciente comentou que chora com muita frequência, fica com medo em extremo diante de situações<br> muito desafiadoras e entra em pânico. </p>
+                 </div>
+                 <div>
+                     <h4 class="titlePay">Pagamento</h4>
+                     <div class="containerDataOfPayment">
+                         <div>
+                             <p class="titleDescriptionBill">Valor</p>
+                             <p class="billValue">R$200,00</p>
+                         </div>
+                         <div>
+                             <p class="titleDescriptionBill">Forma de pagamento</p>
+                             <p class="billValue">PIX</p>
+                         </div>
+                         <div>
+                             <p class="titleDescriptionBill">Status</p>
+                             <p class="billValue">Pago</p>
+                         </div>
+                     </div>
+                 </div>
+                         </div>
+             </div>
+        </article>
 
 
 </div>

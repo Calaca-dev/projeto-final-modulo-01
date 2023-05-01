@@ -1,11 +1,16 @@
 
-.flexWrapper {
+ .flexWrapper {
     width: 100vw;
-    height: 100vh;
+    height: fit-content;
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    align-items: center;
     margin-top: 3em;
-}
+    
+
+ 
+} 
 #linkToGoBack {
     display: flex;
     text-decoration: none;
@@ -43,6 +48,7 @@
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
     font-size: 3em;
+
 }
 
 .contentAsideImgs {
@@ -62,16 +68,15 @@
     height: fit-content;
     display: flex;
     align-items: center;
-    
 }
 
 /* quando elementos que estão em baixo um do outro tem um de baixo com position fixed, não dá para mover os outros p/ baixo */
 .wraperMedicalRecord {
-    width: fit-content;
+    width:fit-content;
     height: fit-content;
     display: flex;
     justify-content: center;
-     gap: 1.5em;
+     gap: 1.5em;  
 
 }
 
@@ -79,8 +84,6 @@
     width: fit-content;
     height: fit-content;
    display: flex;
-   
-
 }
 
 .addDataAboutPatients {
@@ -159,8 +162,6 @@ justify-content: center;
 .positionOfDinamicContent {
     width: fit-content;
     height: fit-content;
-   
-    
 }
 .flexCardPatient {
 width:   57.75em;
@@ -169,11 +170,13 @@ border-radius: 0px 8px 8px 0px;
 box-shadow: 1px 1px 5px 0px #0000001A;
 background-color: white;
 margin-top: 2.9375em;
+position: relative;
 display: flex;
 align-items: center;
 justify-content: center;
 flex-direction: column;
 border-left:4px solid #00995D ;
+cursor: pointer;
 }
 .flexCardPatientRelevantFact {
 width: 57.75em;
@@ -194,18 +197,29 @@ border-left:4px solid #2F80ED ;
     display: flex;
     border: 8px solid black;
 }
+.dotsFlex {
+    width:56.7em;
+    height: 2em;
+    display: flex;
+    justify-content: flex-end;
+   
+}
 .dotsToOpenModal {
     all: unset;
     cursor: pointer;
+    
     
 }
 .dotsToOpenModal:hover {
  transform: scale(1.2);
 }
 .bodyCard {
-    width: fit-content;    
+    display: flex;
+    justify-content: flex-start;
+    width: 57.75em;    
     height: fit-content;
     padding: 1.25em;
+
     font-family: 'Montserrat', sans-serif;
     margin-bottom: 0.5em;
 }
@@ -218,7 +232,7 @@ border-left:4px solid #2F80ED ;
     display: flex;
     justify-content: center;
     align-items: center;
-   
+    
 }
 .bgIconRelevantFact {
     width: 3em;
@@ -228,8 +242,6 @@ border-left:4px solid #2F80ED ;
     display: flex;
     justify-content: center;
     align-items: center;
-  
-
 }
 .fixedIcon {
  position: absolute;
@@ -244,13 +256,18 @@ border-left:4px solid #2F80ED ;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    justify-content: flex-start;
+  
+    
+    justify-content: flex-start; 
   
     
 }
 
-/* Modal Estilzação */
+/* Modal Estilização */
 
 .formContainerRecord {
+
     width: fit-content;
     height: fit-content;
     display: flex;
@@ -323,6 +340,7 @@ border-left:4px solid #2F80ED ;
     font-weight: 400;
    font-family: 'Montserrat', sans-serif;
     color: #4F4F4F;
+    padding-left: 1em;
 }
 .inputFlexModalTop{
     display: flex;
@@ -356,7 +374,6 @@ border-left:4px solid #2F80ED ;
 }
 .areaTxtStyle {
     border-radius: 8px;
-    
     border: 1px solid #BDBDBD;
 }
 .inputFlexModalEnd {
@@ -428,4 +445,237 @@ background-color: rgba(0, 0, 0, 0.71);
     align-items: center;
     font-family: 'Montserrat', sans-serif;
     cursor: pointer;
+}
+/* layout conteúdo card sessão */
+/* container p/ centralizar */
+.pageBack {
+    width: fit-content;
+    height: fit-content;
+    background-color: #2F80ED;
+    border: 1px solid ;
+}
+.flexBackBtn {
+    cursor: pointer;
+    width: 100vw;
+    height: fit-content;
+    display: flex;
+    justify-content: flex-end;
+    position: absolute;
+    bottom:90%;
+
+
+}
+.backMrPart {
+    width: 91.5em;
+    height: 3em;
+    background-color: white;
+    border-radius: 8px 0px 0px 8px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    box-shadow: 1px 1px 5px 0px #0000001A;
+    margin-top: -1.2em;
+    display: none;
+ 
+    
+}
+.btnBackMr {
+all: unset;
+cursor: pointer;
+display: flex;
+justify-content: center;
+align-items: center;
+width: 90px;
+height: 40px;
+gap: 0.5625em;
+color: #4F4F4F;
+}
+
+.sectionCard {
+width: 100vw;
+height:100vh;
+display: flex;
+margin-top: -7em;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+gap: 1em;
+display: none;
+position: relative;
+
+}
+.flextTitle {
+    width:57.75em ;
+    display: flex;
+    justify-content: flex-start;
+}
+.titleSectionContent {
+font-family: 'Comfortaa', cursive;
+color: #4F4F4F;
+font-size: 1.5em;
+}
+.containerCardSection {
+width: 57.75em;
+height: fit-content;
+border-radius: 8px;
+box-shadow: 1px 1px 5px 0px #0000001A;
+background-color: white;
+padding: 1.5em 1.1875em 1.75em 1.5em;
+}
+.flexTopPartCardSection{
+    width:54em;
+    display: flex;
+    justify-content: space-between;
+}
+
+.titleDescriptionSection {
+color: #000000;
+font-family: 'Montserrat', sans-serif;
+font-size: 1.125em;
+font-weight: 500;
+margin-bottom: 1px;
+}
+.dateDescription {
+color: #616161;
+font-size: 0.875em;
+font-family: 'Montserrat', sans-serif;
+margin-bottom: 1.5em;
+}
+.containerButtons {
+    width: 70px;
+    display: flex;
+    gap: 0.5em;
+    justify-self: flex-start;
+    margin-bottom: 3em;
+    
+}
+.containerNotes {
+ margin-bottom: 1.5em;
+}
+.textOfNotes {
+font-family: 'Montserrat', sans-serif;
+color: #424242;
+font-size:1em ;
+line-height: 27.2px;
+
+}
+.titlePay {
+color: #000000;
+font-family: 'Montserrat', sans-serif;
+font-size: 1em;
+margin-bottom: 0.8125em;
+
+}
+.containerDataOfPayment{
+  width: 400px;
+  height: fit-content;
+  display: flex;
+  gap: 4em;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.titleDescriptionBill {
+color: #757575;
+font-family: 'Montserrat', sans-serif;
+font-size: 0.75em;
+margin-bottom: 0.3125em;
+}
+.billValue {
+font-size: 0.75em;
+color: #000000;
+}
+
+/* Estilização do modal fato relevante */
+.modalRelevantFact {
+    width: 55.0625em;
+    height: fit-content;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 1px 1px 5px 0px #0000001A;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.subscribeAndSearchModalRf {
+    width: 52em;
+    margin-left: 1em;
+    margin-top: 2em;
+    margin-bottom: 2.6875em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+
+}
+.flexTopPartRf {
+    width: 47.6em;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1em;
+}
+.FlexinputArea {
+    display: flex;
+    width: fit-content;
+    height: fit-content;
+    flex-direction: column;
+}
+/* área de texto estilização     */
+.flexTextArea {
+    width: fit-content;
+    height: fit-content;
+    flex-direction: column;
+    justify-content: center;
+    display: flex;
+    
+}
+.areaTxtStyleRf {
+    border-radius: 8px;
+    border: 1px solid #BDBDBD;
+    width: 57em;
+    height:  17em;
+ 
+}
+.inputStyleTopPartTitle {
+    width: 32em;
+    height: 3em;
+    border-radius: 8px;
+    border: 1px solid #BDBDBD;
+    padding-left:1em; 
+    display: flex;
+
+}
+.inputStyleTopPartDataRf {
+    width: 23em;
+    height: 3em;
+    border-radius: 8px;
+    border: 1px solid #BDBDBD;
+    padding-left:1em; 
+    display: flex;
+    
+}
+.divisionLineRf {
+    border: 1px solid #E0E0E0;
+    margin-top: 1.5em;
+    margin-bottom:2.375em ;
+}
+.modalEndPartRelevantFact {
+    width: 55em;
+    height: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5625em 2em 1.5em 2em;
+}
+.backgroundModalRf {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.71);
+    display: none;
 }

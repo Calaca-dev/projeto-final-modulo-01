@@ -78,133 +78,29 @@
   ],
   "prontuarioSessao": [
     {
-      "id": 1,
-      "dateValue": "eu testando",
-      "starTime": "",
-      "finishTime": "",
-      "titleValue": "Sessão 01",
-      "notesValue": "eu faxendo um teste",
-      "cashValue": "",
-      "valueType": "PIX",
-      "debt": "on",
-      "debtTwo": "on"
+      "dateValue": "2023-04-30",
+      "starTime": "12:00",
+      "finishTime": "14:00",
+      "titleValue": " teste ás 10:42",
+      "notesValue": "A paciente relatou que estava tendo dificuldades com sua família e amigos próximos, pois demostra ansiedade diante de fatos cotidianos, resultando em reações de raiva com as pessoas que estão próximas a ela. Além disso, relatou brigas recentes com seus pais e namorado e, após a briga, ficou mal diante... Ver mais",
+      "cashValue": "302,00",
+      "valueType": "Débito",
+      "debt": "Pagou",
+      "id": 1
+    }
+  ],
+  "FatoRelevante": [
+    {
+      "dateValue": "",
+      "titleValue": "teste",
+      "sectionNotes": "aaaaaaaa",
+      "id": 1
     },
     {
       "dateValue": "",
-      "starTime": "",
-      "finishTime": "",
-      "titleValue": "",
-      "notesValue": "",
-      "cashValue": "",
-      "valueType": "PIX",
-      "debt": "on",
-      "debtTwo": "on",
+      "titleValue": "teste",
+      "sectionNotes": "",
       "id": 2
-    },
-    {
-      "dateValue": "",
-      "starTime": "teste refresh page 03:49",
-      "finishTime": "",
-      "titleValue": "",
-      "notesValue": "",
-      "cashValue": "",
-      "valueType": "PIX",
-      "debt": "on",
-      "debtTwo": "on",
-      "id": 3
-    },
-    {
-      "dateValue": "",
-      "starTime": "teste refresh page 03:49",
-      "finishTime": "",
-      "titleValue": "",
-      "notesValue": "",
-      "cashValue": "",
-      "valueType": "PIX",
-      "debt": "on",
-      "debtTwo": "on",
-      "id": 4
-    },
-    {
-      "dateValue": "",
-      "starTime": "teste 2, 3:50",
-      "finishTime": "",
-      "titleValue": "",
-      "notesValue": "",
-      "cashValue": "",
-      "valueType": "PIX",
-      "debt": "on",
-      "debtTwo": "on",
-      "id": 5
-    },
-    {
-      "dateValue": "",
-      "starTime": "",
-      "finishTime": "",
-      "titleValue": "",
-      "notesValue": "",
-      "cashValue": "",
-      "valueType": "PIX",
-      "debt": "on",
-      "debtTwo": "on",
-      "id": 6
-    },
-    {
-      "dateValue": "",
-      "starTime": "teste",
-      "finishTime": "",
-      "titleValue": "",
-      "notesValue": "",
-      "cashValue": "",
-      "valueType": "PIX",
-      "debt": "Pagou",
-      "debtTwo": "Não Pagou",
-      "id": 7
-    },
-    {
-      "dateValue": "",
-      "starTime": "teste13",
-      "finishTime": "",
-      "titleValue": "",
-      "notesValue": "",
-      "cashValue": "",
-      "valueType": "PIX",
-      "debt": "Pagou",
-      "debtTwo": "Não Pagou",
-      "id": 8
-    },
-    {
-      "dateValue": "",
-      "starTime": "teste ás 19:05",
-      "finishTime": "",
-      "titleValue": "",
-      "notesValue": "",
-      "cashValue": "",
-      "valueType": "PIX",
-      "debt": "Pagou",
-      "id": 9
-    },
-    {
-      "dateValue": "",
-      "starTime": "teste ás 19:05",
-      "finishTime": "",
-      "titleValue": "",
-      "notesValue": "",
-      "cashValue": "",
-      "valueType": "PIX",
-      "debt": "Não Pagou",
-      "id": 10
-    },
-    {
-      "dateValue": "20223-04-28",
-      "starTime": "teste ás 19:25",
-      "finishTime": "",
-      "titleValue": "snfoiSBIOF",
-      "notesValue": "",
-      "cashValue": "",
-      "valueType": "PIX",
-      "debt": "Pagou",
-      "id": 11
     }
   ]
 }
