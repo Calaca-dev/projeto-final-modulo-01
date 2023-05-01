@@ -327,7 +327,7 @@ const renderData =(patients)=> {
     
                   <td class="lastCellStyle">
                           <figure class=" bordericonstyle  greenBorder">
-                          <a href="./medical-record.html" target="_blank"     class="linkMedicalRecordStyle"><img src="./img/calendar-icon.svg" alt=""></a>
+                          <a href="./medical-record.html" target="_self" class="linkMedicalRecordStyle"><img src="./img/calendar-icon.svg" alt=""></a>
                           </figure>
                           <figure class="bordericonstyle blueBorder">
                           <img onclick="modalModifyData(${userDataValue.id})" src="./img/pen-edit.svg" alt=""></figure>
