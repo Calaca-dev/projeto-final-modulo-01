@@ -83,6 +83,8 @@ function modalInputsNewSubscribe() {
   const titleSubscribe = document.querySelector('#hideInModalShow')
   const btnSaveInputDate = document.querySelector('.salveBtn')
 
+  /* Fazendo desaparecer coluna de exemplicação */
+  document.querySelector('.showIndividualData').style.display="none"
   
 /* Resentando titulo para do modal newSubscribe */
 titleModify.style.display="none"
@@ -345,7 +347,7 @@ const getDataPatientsInApi = async () => {
 
  
 
-      const apiRequsition = await fetch (apiUrl+'/pacientes');
+      const apiRequsition = await fetch ('http://localhost:3000/pacientes');
       const patientSubscribe = await apiRequsition.json()
      
    renderData(patientSubscribe);
@@ -356,7 +358,7 @@ const getDataPatientsInApi = async () => {
 /* Fazendo o método POST */
 
 async function userDateApi(newPatient) {
-  return fetch(apiUrl+'/pacientes', {
+  return fetch('http://localhost:3000/pacientes', {
    method: 'POST',
      headers: {
        'Accept': 'application/json, text/plain, */*',

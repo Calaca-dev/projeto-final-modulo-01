@@ -162,6 +162,7 @@ justify-content: center;
 .positionOfDinamicContent {
     width: fit-content;
     height: fit-content;
+    margin-bottom: 1em;
 }
 .flexCardPatient {
 width:   57.75em;
@@ -375,6 +376,14 @@ border-left:4px solid #2F80ED ;
 .areaTxtStyle {
     border-radius: 8px;
     border: 1px solid #BDBDBD;
+}
+.inputDescriptionStyleStatus {
+    width: 15em;
+    height: 2.995em;
+    border-radius: 8px;
+    border: 1px solid #BDBDBD;
+    padding-left: 1em;
+    background-color: white;
 }
 .inputFlexModalEnd {
     width: fit-content;

@@ -140,13 +140,9 @@ function closeModalMr(){
 
 async function newRelevantFact() {
 
-  console.log("inicio");
   const date = document.querySelector('#dateOfSection');
-console.log("rodou")  ;
   const titleRf = document.querySelector('#titleRf');
-console.log("rodou");
   const notesRf = document.querySelector('#keyPoint');
-console.log("rodou");
 
   const revelantFactData = {
     dateValue:date.value,
@@ -161,7 +157,7 @@ console.log("rodou");
   setTimeout(() => {
       document.location.reload();
     }, 500); 
-  console.log("fim");
+
 }
 
 //   Fazendo o método POST para salvar ás informações da sessão .
@@ -196,18 +192,13 @@ async function saveDataOfRf(rfCardData) {
     const apiRequsition = await fetch(apiUrl+'/FatoRelevante');
      const addPatienRf = await apiRequsition.json();
 
-console.log("aaaa")
+
     const addingCardRf = document.querySelector('.dinamicRelevantFact');
     let addingRf ='';
-console.log("aaaa")   
+
     addPatienRf.forEach((userRelevantFact)=>{
-      addingRf = addingRf+ `    
-      </div>
-  </div>
-  <div class="bodyCard">
-      <p>Fato Relevante</p>
-  </div>
-</div>
+      addingRf = addingRf + `    
+    
 
 <div class="flexCardPatientRelevantFact">
 <div>
@@ -231,9 +222,13 @@ console.log("aaaa")
 </div>
 </div>
 </div>`
+
 addingCardRf.innerHTML = addingRf;
+
 })
-console.log("aaaa")
+
+
+/*  */
 
   }
   
@@ -281,6 +276,8 @@ console.log("aaaa")
     })
     }
 
+  
+
    function showMedicalRecord(){
       const toVanish = document.querySelector('#toNotDisplay')
       const toVanishContent = document.querySelector('#vanishContent')
@@ -312,3 +309,4 @@ console.log("aaaa")
      addHtml(); 
        /* chamando função para renderizar na tela os card's  do fato relevante*/
      addHtmlRf();
+    

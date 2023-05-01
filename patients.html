@@ -73,6 +73,21 @@
                         <th class="txtStyleTableHeader MiddleCellStyle ">CPF</th>
                         <th class="txtStyleTableHeader" id="tableThWidth">Ações</th>
                     </tr>
+                    <tr class="showIndividualData">
+                        <td onclick="modalShowDataUsers()" class="topCell" id="rgPatient"></td>
+                      <td onclick="modalShowDataUsers()" class="MiddleCellStyle" id="NameCell01"></td>
+                                    <td onclick="modalShowDataUsers()" class="MiddleCellStyle" id="patientCpf"> </td>
+                      
+                    
+                                  <td class="lastCellStyle">
+                                          <figure class=" bordericonstyle  greenBorder">
+                                          <a href="./medical-record.html" target="_blank"     class="linkMedicalRecordStyle"><img src="./img/calendar-icon.svg" alt=""></a>
+                                          </figure>
+                                          <figure class="bordericonstyle blueBorder">
+                                          <img onclick="modalModifyData()" src="./img/pen-edit.svg" alt=""></figure>
+                                          <figure class="bordericonstyle redBorder" onclick="removeUserDate()"><img src="./img/trash-icon.svg" alt=""></figure>
+                                          </div>
+                                          </tr>
                 </thead>
                 <!-- Adicionando html de forma dinâmica -->
                 <tbody class="dataSaveHereJSDinamic"></tbody>

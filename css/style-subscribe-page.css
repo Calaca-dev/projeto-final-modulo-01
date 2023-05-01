@@ -136,9 +136,9 @@ label {
     height: fit-content;
     display: flex;
     justify-content: flex-end;
-    
-    
+     
 }
+
 .asteriskStyle {
     color: #EB5757;
     font-size: 0.5em;
@@ -168,4 +168,8 @@ label {
 }
 .gap {
     margin-bottom: 4em;
+}
+#linkStylePath {
+    text-decoration: none;
+    color: white;
 }

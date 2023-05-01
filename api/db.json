@@ -1,39 +1,9 @@
 {
   "pacientes": [
     {
-      "cpf": "709.561.634-59",
-      "name": "teste ás 03:17",
-      "birth": "2000-04-20",
-      "email": "contatocalacajoao@gmail.com",
-      "gender": "Masculino",
-      "country": "",
-      "bornIn": "João Pessoa-PB",
-      "job": "Programador  Javascript FullStack",
-      "educationLevel": "Médio Completo.",
-      "loveStatus": "",
-      "fatherFigure": "Maria de Fátima Bernardo Calaça de Freitas",
-      "motherFigure": "Luíz Gonzaga Nóbrega de Freitas Filho",
-      "id": 2
-    },
-    {
+      "id": 1,
       "cpf": "",
-      "name": "teste ás 00:36 ",
-      "birth": "2023-04-28",
-      "email": "",
-      "gender": "Feminino",
-      "country": "Brasileira",
-      "bornIn": "",
-      "job": "",
-      "educationLevel": "",
-      "loveStatus": "Casado(a)",
-      "fatherFigure": "",
-      "motherFigure": "",
-      "id": 6
-    },
-    {
-      "id": 8,
-      "cpf": "",
-      "name": "teste ás 21:41 refresh page",
+      "name": "teste",
       "birth": "",
       "email": "",
       "gender": "",
@@ -44,36 +14,6 @@
       "loveStatus": "",
       "fatherFigure": "",
       "motherFigure": ""
-    },
-    {
-      "id": 9,
-      "cpf": "",
-      "name": "teste ás 21:44 refresh time",
-      "birth": "",
-      "email": "",
-      "gender": "",
-      "country": "",
-      "bornIn": "",
-      "job": "",
-      "educationLevel": "",
-      "loveStatus": "",
-      "fatherFigure": "",
-      "motherFigure": ""
-    },
-    {
-      "cpf": "",
-      "name": "teste de funcionalidade no render",
-      "birth": "",
-      "email": "",
-      "gender": "",
-      "country": "",
-      "bornIn": "",
-      "job": "",
-      "educationLevel": "",
-      "loveStatus": "",
-      "fatherFigure": "",
-      "motherFigure": "",
-      "id": 10
     }
   ],
   "prontuarioSessao": [
