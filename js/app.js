@@ -347,7 +347,7 @@ const getDataPatientsInApi = async () => {
 
  
 
-      const apiRequsition = await fetch ('http://localhost:3000/pacientes');
+      const apiRequsition = await fetch (apiUrl+'/pacientes');
       const patientSubscribe = await apiRequsition.json()
      
    renderData(patientSubscribe);
@@ -358,7 +358,7 @@ const getDataPatientsInApi = async () => {
 /* Fazendo o método POST */
 
 async function userDateApi(newPatient) {
-  return fetch('http://localhost:3000/pacientes', {
+  return fetch(apiUrl+'/pacientes', {
    method: 'POST',
      headers: {
        'Accept': 'application/json, text/plain, */*',
