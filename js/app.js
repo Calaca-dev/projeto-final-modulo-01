@@ -9,6 +9,7 @@ let modifyingData = null;
 const apiUrl = 'https://projeto-modulo-um-arnia.onrender.com';
 
 
+
 /* Valores de input usados nos 3 form's */
   const cpfValue = document.querySelector('#cpfUser');
   const nameValue = document.querySelector('#nameUser');
@@ -93,7 +94,7 @@ titleView.style.display="none"
 
   
 /* Resetando os campos quando abrir o modal*/
-cpfValue.value=""
+cpfValue.value=""   
 nameValue.value=""
 birthValue.value=""
 emailValue.value=""
@@ -289,7 +290,7 @@ titleModify.style.display="flex"
   const newPatient = await apiRequsition.json();
   
   document.querySelector('#cpfUser').value = newPatient.cpf;
-  document.querySelector('#nameUser').value = newPatient.name;
+  document.querySelector('#nameUser').value = newPatient.name; 
   document.querySelector('#dateBirthUser').value = newPatient.birth;
   document.querySelector('#emailUser').value = newPatient.email;
   document.querySelector('#userGender').value = newPatient.gender;  
@@ -327,7 +328,7 @@ const renderData =(patients)=> {
     
                   <td class="lastCellStyle">
                           <figure class=" bordericonstyle  greenBorder">
-                          <a href="./medical-record.html" target="_self" class="linkMedicalRecordStyle"><img src="./img/calendar-icon.svg" alt=""></a>
+                          <a href="./medical-record.html" class="linkMedicalRecordStyle"><img src="./img/calendar-icon.svg" alt=""></a>
                           </figure>
                           <figure class="bordericonstyle blueBorder">
                           <img onclick="modalModifyData(${userDataValue.id})" src="./img/pen-edit.svg" alt=""></figure>
@@ -437,7 +438,7 @@ setTimeout(() => {
 
   } 
 /* Função que pega os dados colocados pelos usuários da página de paciente */
-async function sendingUserDate () {
+async function sendingUserDate(){
   
   const cpfValue = document.querySelector('#cpfUser');
   const nameValue = document.querySelector('#nameUser');
@@ -468,13 +469,13 @@ const newPatient = {
      motherFigure:dadName.value,
 
   }
-    console.log(newPatient);
+    
   await userDateApi(newPatient);
 
 }
 
 /* Search bar function */
-
+    
 const filter = async () => {
  const  searchUser = inputSearch.value;
  const requisition = await fetch(apiUrl+`/pacientes?name_like=${searchUser}`)
@@ -489,5 +490,4 @@ btnSaveInputDate.addEventListener('click',sendingUserDate);
 getDataPatientsInApi(); 
 modifyBtn.addEventListener('click',editDataUsers);
 document.querySelector('.btnSearch').addEventListener('click',filter)
-
 
