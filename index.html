@@ -7,27 +7,31 @@
     <title>Wexer Psi - login</title>
     <link rel="stylesheet" href="./css/login-page-style.css">
     <script src="https://kit.fontawesome.com/d0129d2559.js" crossorigin="anonymous" defer></script>
-    <script src="./js/login.js"></script>
-    <script src="./js/app.js" defer></script>
+    <script src="./js/login.js" defer></script>
+
 </head>
 <body>
      <div class="fatherDivReposivite">
        
          <main id="formCard">
             <form action="">
-                <figure><img id="logoImg" src="./img/logo-wexer-psi.png" alt="Logo da Wexer Psi, site que ajuda o trabalho dos psicologos"></figure>
-         <fieldset class="alignmentInputBlock">
-             <div><label for="loginInput">Login</label></div>
-             <input class="inputStyle"type="text" placeholder="Coloque seu email aqui" id="loginInput" name="loginInput">
-             <small></small>
+                <figure><img id="logoImg" src="./img/logo-wexer-psi.png"
+                        alt="Logo da Wexer Psi, site que ajuda o trabalho dos psicologos">
+                    </figure>
+                <fieldset class="alignmentInputBlock">
+                    <div>
+                        <label for="loginInput">Login</label>
+                    </div>
+                    <input class="inputStyle" type="text" placeholder="Coloque seu email aqui" id="loginInput" name="loginInput">
+                    <small></small>
          </fieldset>
          
          <fieldset>
-             <div><label for="passSword">Senha</label></div>
-             <input class="inputStyle"type="password" placeholder="Coloque sua senha aqui" id="passSword" name="passSword">
+             <div><label for="pasSword">Senha</label></div>
+             <input class="inputStyle"type="password" placeholder="Coloque sua senha aqui" id="pasSword" name="pasSword">
              <small></small>
          </fieldset>
-           <button  id="btnForm"type="submit">Entrar</button>
+           <button  id="btnForm"type="button" onclick="ifResgiterEnter()">Entrar</button>
            <a href="./subscribe-user.html" id="link-subscribe" target="_self">Cadastre-se gratuitamente</a>
             </form>
          </main>

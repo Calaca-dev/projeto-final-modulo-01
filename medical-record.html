@@ -12,7 +12,7 @@
     <title>Protuário do paciente</title>
 </head>
 <body>
-    <header class="menu">  
+    <header class="menu" id="gobackToBeging">  
         <div class="logoHeader">
             <figure class="imgLogo"><img src="./img/logo-header-patients-page.png" alt=""></figure>
         </div>
@@ -35,7 +35,7 @@
         </div>
         <div class="logOutArea">
             <figure><img src="./img/arrow-right-header.png" alt=""></figure>
-            <button class="btnLogOut">Sair</button>
+            <button class="btnLogOut"><a href="./index.html" class="linkToLog">Sair</a></button>
         </div>
     </header>
     <div class="flexSearch">
@@ -61,7 +61,6 @@
                        
 
 <div class="flexWrapper">
-        
     <div class="wraperMedicalRecord" id="vanishContent">
     <aside class="asideContent">
     
@@ -102,7 +101,9 @@
     </div>
     <div class="positionOfDinamicContent">    
           <!-- HTMl dinâmico fato relevante -->
+          
       </div>
+      
     
        <div class="dinamicRelevantFact">
         <!-- HTMl dinâmico fato relevante -->
@@ -138,7 +139,7 @@
                 <div class="inputFlexModalTop">
                     <div>
                         <label class="inputDescriptionStyle" for="dateDayMonthYear">Data*</label>
-                        <input class="inputStyleTopPart" type="date" id="dateDayMonthYear" name="dateDayMonthYear"placeholder="24/01/2023">
+                        <input class="inputStyleTopPart" type="date" id="dateDayMonthYear" name="dateDayMonthYear" placeholder="24/01/2023">
                     </div>
                     <div>
                         <label class="inputDescriptionStyle" for="initialTime">Hora de início*</label>
@@ -188,17 +189,19 @@
                         </div>
     
                         <div>
-                            <div><label for="" class="inputDescriptionStyle     spaceBtwTitleAndInput">Status</label></div>
+                            <div><label for="debtTypeOne" class="inputDescriptionStyle     spaceBtwTitleAndInput">Status</label></div>
                         
                             <div class="flexRadioInputs">
-                                 <label for="debtTypeOne" style="display: none;"></label>   
-                                <div>
-                                    <input type="radio" value="Pagou"name="debt" class="debt" id="debtTypeOne"><span>Pagou</span>
-                                </div>
-                                <label for="debtTypeTwo" style="display: none;"></label>   
-                                <div>
-                                    <input type="radio" value="Não Pagou" name="debt" class="debt" id="debtTypeTwo"><span>Não pagou</span>
-                                </div>
+                                 <label for="pago">
+                                     <div>
+                                         <input type="radio" value="Pagou"name="debt" class="debt" id="debtTypeOne"><span>Pagou</span>
+                                        </div>
+                                    </label>   
+                                <label for="nao-pago">
+                                    <div>
+                                        <input type="radio" value="Não Pagou" name="debt" class="debt" id="debtTypeTwo"><span>Não pagou</span>
+                                    </div>
+                                </label>   
                             </div>
                         </div>
     
@@ -275,14 +278,17 @@
             <div class="flexBackBtn" onclick="vinishMedicalRecord()">
     
                 <div class="backMrPart"> 
-                    <button class="btnBackMr" > <img src="./img/icon-smaller-then.png">Voltar</button></div>
+                    <button class="btnBackMr" onclick="takeAndPut()"> <img src="./img/icon-smaller-then.png">Voltar</button></div>
         </div>
         
             <div class="flextTitle">
     
-                    <h1 class="titleSectionContent">Sessão</h1>
             </div>
+            </div>
+           
+</div>
              <div class="containerCardSection">
+    
     
                 <div class="flexTopPartCardSection">
                  <div>
@@ -320,6 +326,12 @@
              </div>
         </article>
 
+
+</div>
+            
+</article>
+
+<div class="pageEnd"><p><a href="#gobackToBeging"><img src="./img/arrow-up-img.png" alt="">Voltar para o topo</a></p></div>
 
 </div>
 </body>

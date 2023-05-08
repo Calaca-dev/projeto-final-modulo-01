@@ -6,8 +6,7 @@ const takingDataForPut = document.querySelector('.callDataToMakePut');
 const editButton = document.querySelector('.BlueBorder')
 const inputSearch = document.querySelector('#search')
 let modifyingData = null;
-const apiUrl = 'https://projeto-modulo-um-arnia.onrender.com';
-
+const apiUrl ='https://projeto-modulo-um-arnia.onrender.com';
 
 
 /* Valores de input usados nos 3 form's */
@@ -349,7 +348,7 @@ const getDataPatientsInApi = async () => {
  
 
       const apiRequsition = await fetch (apiUrl+'/pacientes');
-      const patientSubscribe = await apiRequsition.json()
+      const patientSubscribe = await apiRequsition.json();
      
    renderData(patientSubscribe);
       
@@ -386,7 +385,7 @@ const putMethod = async (id,modifyDatePatient) => {
 
 /* Fazendo o método DELETE */
 
-async function removeUserDate (id) {
+async function removeUserDate(id) {
  
   await fetch(apiUrl+`/pacientes/${id}`, {
       method: 'DELETE'

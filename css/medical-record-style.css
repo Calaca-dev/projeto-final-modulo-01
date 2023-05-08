@@ -7,9 +7,6 @@
     flex-direction: column;
     align-items: center;
     margin-top: 3em;
-    
-
- 
 } 
 #linkToGoBack {
     display: flex;
@@ -163,6 +160,7 @@ justify-content: center;
     width: fit-content;
     height: fit-content;
     margin-bottom: 1em;
+    position: relative;
 }
 .flexCardPatient {
 width:   57.75em;
@@ -177,7 +175,7 @@ align-items: center;
 justify-content: center;
 flex-direction: column;
 border-left:4px solid #00995D ;
-cursor: pointer;
+
 }
 .flexCardPatientRelevantFact {
 width: 57.75em;
@@ -687,4 +685,92 @@ color: #000000;
     inset: 0;
     background-color: rgba(0, 0, 0, 0.71);
     display: none;
+}
+/* cor dentro do ver mais dentro do card */
+.pathToOpenData {
+    color: #2F80ED;
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+}
+/* Estilização do modal que edita e deleta o card */
+.cardModalEditDelete {
+ width: 11.375em;   
+ height: 7.6875em;
+ background-color: white;
+ box-shadow: 1px 1px 5px 0px #0000001A;
+ border-radius: 0px 8px  8px 8px;
+ flex-direction: column;
+ align-items: center;
+ position: absolute;  
+ left:900px;
+ top: 30px;
+ display:none;
+ 
+}
+.in{
+    display: flex;
+}
+
+
+.modalEditPart {
+width: 11.375em;
+height:  3.625em;
+border-radius: 0px 8px  8px 8px;
+display: flex;
+justify-content: flex-start;
+align-items: center;
+padding-left: 1em;
+gap: 0.751875em;
+}
+.modalEditPart:hover{
+background-color: #C5F2E0;
+    }
+.modalDeletePart {
+width: 11.375em;
+height:  3.625em;
+border-radius: 0px 8px  8px 8px;
+display: flex;
+justify-content: flex-start;
+align-items: center;
+padding-left: 1em;
+gap: 0.751875em;
+}
+.modalDeletePart:hover{
+background-color: #C5F2E0;
+}
+#colorWordEdit {
+color: #2F80ED;
+}
+#colorWordDelete {
+color: #EB5757;
+}
+.imgsStyleModal {
+    width: 1.123125em;
+    height:1.123125em;
+}
+.clickAreaStyle {
+    all: unset;
+    cursor: pointer;
+}
+
+/* --------final da página------- */
+.pageEnd {
+    width: 100vw;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top:3.8125em;
+    margin-bottom: 6.125em;    
+    
+    
+}
+.pageEnd a {
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    color: #212121;
+    padding-left: 360px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

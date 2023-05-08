@@ -9,8 +9,7 @@
     <link rel="stylesheet" href="./css/login-page-style.css">
     <link rel="stylesheet" href="./css/style-subscribe-page.css">
     <script src="https://kit.fontawesome.com/d0129d2559.js" crossorigin="anonymous" defer></script>
-    <script src="./js/app.js" defer></script>
-    <script src="./js/sing-up.js"></script>
+    <script src="./js/sing-up.js" defer></script>
 </head>
 
 <body id="htmlBody">
@@ -30,16 +29,16 @@
 
                     <div class="alignLabel"><label for="userName">Nome</label></div>
 
-                    <input type="email" id="userName" class="inputStyleSubscribe" placeholder="Coloque seu Nome" class="inputContent" id="spaceBtwInputs" required><!--por que o required tem esse comportamento! -->
+                    <input type="text" id="userName" name="userName" class="inputStyleSubscribe" placeholder="Coloque seu Nome" class="inputContent" required><!--por que o required tem esse comportamento! -->
 
 
-                    <div class="alignLabel"><label for="email" class="">E-mail</label></div>
+                    <div class="alignLabel"><label for="email">E-mail</label></div>
                     
                     <input type="email" id="email" class="inputStyleSubscribe" placeholder="Coloque seu E-mail aqui" required>
 
                     <div class="btnAlignOne">
-                        <button class="btnShowInputPasssword" onclick="changeInputs()">Proseguir
-                            <i class="fa-solid fa-arrow-right btnIcon" ></i>
+                        <button class="btnShowInputPasssword" type="button" onclick="changeInputs()">Prosseguir
+                            <i class="fa-solid fa-arrow-right btnIcon"></i>
                         </button>
                     </div>
                     
@@ -61,18 +60,17 @@
                         </div>
                     
                         
-                            <div><label for="userPsword" class="labelStyle gapBtwStyle">Senha</label></div>
+                            <div><label for="userPassword" class="labelStyle gapBtwStyle">Senha</label></div>
 
-                            <input type="password" id="userPsword" class="inputStyleSubscribe inputContent" placeholder="Coloque sua senha aqui!"
-                                 id="spaceBtwInputs">
+                            <input type="password" id="userPassword" name="userPassword" class="inputStyleSubscribe inputContent" placeholder="Coloque sua senha aqui!" required>
 
-                            <div><label for="email" class="labelStyle">Confirma Senha</label></div>
+                            <div><label for="confirmation" class="labelStyle">Confirma Senha</label></div>
 
-                            <input type="password" id="email" class="inputStyleSubscribe inputContent"
-                                placeholder="Confirme sua senha!">
+                            <input type="password" id="confirmation"  name="confirmation" class="inputStyleSubscribe inputContent"
+                                placeholder="Confirme sua senha!" required>
 
                             <div class="btnAlignTwo">
-                                <button class="btnShowInputPasssword gapBtn"><a id="linkStylePath" href="./patients.html" target="_self">Proseguir</a>
+                                <button type="button" onclick="catchingDataNewSubscribe()" class="btnShowInputPasssword gapBtn"><a id="linkStylePath"  target="_self">Prosseguir</a>
                                     <i class="fa-solid fa-arrow-right btnIcon"></i>
                                 </button>
                             </div>
@@ -81,7 +79,7 @@
                                 <p class="howToCreatePsword"><sup><i class="fa-solid fa-asterisk asteriskStyle"></i></sup>Precisa no mínimo 8 digitos</p>
                                 <p class="howToCreatePsword"><sup><i class="fa-solid fa-asterisk asteriskStyle"></i></sup>Precisa conter um caractere especial */+.</p>
                                 <p class="howToCreatePsword"><sup><i class="fa-solid fa-asterisk asteriskStyle"></i></sup>Precisa conter uma letra em MAIÚSCULA</p>
-                            </div>
+                        </div>          
                     </div>
 
                     </div>
