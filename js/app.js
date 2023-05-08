@@ -1,3 +1,6 @@
+const apiUrl = 'https://projeto-modulo-um-arnia.onrender.com';
+
+
 const cardElementTable = document.querySelector('.mainContent');
 const btnSaveInputDate = document.querySelector('.salveBtn');
 const formDate = document.querySelector('.formModal')
@@ -6,7 +9,7 @@ const takingDataForPut = document.querySelector('.callDataToMakePut');
 const editButton = document.querySelector('.BlueBorder')
 const inputSearch = document.querySelector('#search')
 let modifyingData = null;
-const apiUrl ='https://projeto-modulo-um-arnia.onrender.com';
+
 
 
 /* Valores de input usados nos 3 form's */

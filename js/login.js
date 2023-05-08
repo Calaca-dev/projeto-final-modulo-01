@@ -1,5 +1,6 @@
-const apiUrl = 'https://projeto-modulo-um-arnia.onrender.com';
-
+ const apiUrl = 'https://projeto-modulo-um-arnia.onrender.com';
+ 
+//const apiUrl ='http://localhost:3000'
 /* Busca os usuários cadastrados */
 const filterToEnter = async() => {
     
@@ -35,14 +36,16 @@ if(dataApi.length === 0){
     window.alert('Login ou senha não cadastrados!');
 }
 else{dataApi.forEach(atribute => {
+    
+    if (userCheckEmail.length ===0 || userCheckPassword.length===0 ){
+        window.alert('Algum campo vazio, por favor preencher!')
+    }
 
-    if(userCheckEmail === atribute.emailNewSub && userCheckPassword === atribute.passwordNewSub){
+   else if(userCheckEmail === atribute.emailNewSub && userCheckPassword === atribute.passwordNewSub){
       window.location.assign("./patients.html");
       /* window.location.href= `./patients.html?nameNewSub=${atribute.id}` */
 }
-else if (userCheckEmail === atribute.emailNewSub && userCheckPassword!== atribute.passwordNewSub){
 
-}
 else {
  window.alert('Senha ou Login Incorretos!')
 }

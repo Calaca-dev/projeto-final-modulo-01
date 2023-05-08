@@ -1,4 +1,6 @@
-   
+const apiUrl = 'https://projeto-modulo-um-arnia.onrender.com';
+//const apiUrl ='http://localhost:3000'
+
      const nameUser = document.querySelector('#userName');
      const emailUser = document.querySelector('#email');
      const password = document.querySelector('#userPassword');
@@ -29,7 +31,7 @@ function changeInputs() {
   }
 
  async function catchingDataNewSubscribe(){
-console.log('aaaaaa')
+
   let toKnowLegth2 = [password.value,confPassword.value]
 
 console.log('aaaaaa')
@@ -63,7 +65,7 @@ console.log('aaaaaa')
 
   async function sendingToApi(newSubscribe) {
     
-    return  fetch('https://projeto-modulo-um-arnia.onrender.com/cadastrosNovos',{
+    return  fetch('http://localhost:3000/cadastrosNovos',{
     method:'POST',
     headers:{
       'Accept': 'application/json,text/plain, */*',
