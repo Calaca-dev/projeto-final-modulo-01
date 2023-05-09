@@ -1,5 +1,5 @@
-//const apiUrl = 'https://projeto-modulo-um-arnia.onrender.com';
-const apiUrl ='http://localhost:3000'
+const apiUrl = 'https://projeto-modulo-um-arnia.onrender.com';
+
 
      const nameUser = document.querySelector('#userName');
      const emailUser = document.querySelector('#email');
@@ -65,7 +65,7 @@ console.log('aaaaaa')
 
   async function sendingToApi(newSubscribe) {
     
-    return  fetch('http://localhost:3000/cadastrosNovos',{
+    return  fetch(apiUrl+'/cadastrosNovos',{
     method:'POST',
     headers:{
       'Accept': 'application/json,text/plain, */*',

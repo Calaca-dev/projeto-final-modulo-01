@@ -1,6 +1,6 @@
- //const apiUrl = 'https://projeto-modulo-um-arnia.onrender.com';
+ const apiUrl = 'https://projeto-modulo-um-arnia.onrender.com';
  
-const apiUrl ='http://localhost:3000'
+
 /* Busca os usuários cadastrados */
 const filterToEnter = async() => {
     
