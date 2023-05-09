@@ -9,8 +9,8 @@ const payType = document.querySelector('#paymentType');
 const chargeOrNot= document.querySelector('[name=debt]:checked')
 
 let alterSectionData = null;
- const apiUrl = 'https://projeto-modulo-um-arnia.onrender.com'
-//const apiUrl ='http://localhost:3000'
+// const apiUrl = 'https://projeto-modulo-um-arnia.onrender.com'
+const apiUrl ='http://localhost:3000'
 
 //modal do header que abre o bubblue
 function changeArrowAndOpenModal() {

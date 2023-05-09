@@ -1,5 +1,5 @@
-const apiUrl = 'https://projeto-modulo-um-arnia.onrender.com';
-//const apiUrl ='http://localhost:3000'
+//const apiUrl = 'https://projeto-modulo-um-arnia.onrender.com';
+const apiUrl ='http://localhost:3000'
 
      const nameUser = document.querySelector('#userName');
      const emailUser = document.querySelector('#email');

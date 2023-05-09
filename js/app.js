@@ -1,5 +1,5 @@
-const apiUrl = 'https://projeto-modulo-um-arnia.onrender.com';
-
+//const apiUrl = 'https://projeto-modulo-um-arnia.onrender.com';
+const apiUrl ='http://localhost:3000'
 
 const cardElementTable = document.querySelector('.mainContent');
 const btnSaveInputDate = document.querySelector('.salveBtn');
@@ -175,18 +175,13 @@ async function modalShowDataUsers(id) {
   const changingTitleModal = document.querySelector('#hideInModalShow')
   const showTitle = document.querySelector('#modalViewTitle')
   modalInputsNewSubscribe();
- 
-
   /* Usuando dom para tirar uma parte do modal */
   changingTitleModal.style.display="none";
   styleChangeToView.style.display="none";
-  
+ 
   /*Usuando dom para mudar o title do modal*/
   showTitle.style.display="flex";
-
-  /* OBS não funcionaou pegando só a class de estilização tive que pegar por id */
-
-  
+  /* OBS não funcionaou pegando só a class de estilização tive que pegar por id */ 
   const apiRequsition = await fetch(apiUrl+`/pacientes/${id}`)
   const newPatient = await apiRequsition.json();
   
@@ -203,7 +198,6 @@ async function modalShowDataUsers(id) {
   document.querySelector('#userMotherName').value = newPatient.fatherFigure;
   document.querySelector('#userFatherName').value = newPatient.motherFigure;
 
-
   /* Usuando dom para mudar cor dos inputs */
   cpfValue.style.backgroundColor="#E0E0E0";
   nameValue.style.backgroundColor="#E0E0E0";
@@ -218,9 +212,6 @@ async function modalShowDataUsers(id) {
   momName.style.backgroundColor="#E0E0E0";
   dadName.style.backgroundColor="#E0E0E0";
   
-  /* Salvando alterações */  
-
-
 }
 
 
@@ -347,8 +338,6 @@ const renderData =(patients)=> {
 
 /* Pegando dados dos pacientes */
 const getDataPatientsInApi = async () => {
-
- 
 
       const apiRequsition = await fetch (apiUrl+'/pacientes');
       const patientSubscribe = await apiRequsition.json();
