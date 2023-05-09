@@ -41,7 +41,7 @@ else{dataApi.forEach(atribute => {
         window.alert('Algum campo vazio, por favor preencher!')
     }
 
-   else if(userCheckEmail === atribute.emailNewSub && userCheckPassword === atribute.passwordNewSub){
+   else if(userCheckPassword === atribute.emailNewSub && userCheckPassword === atribute.passwordNewSub){
       window.location.assign("./patients.html");
       /* window.location.href= `./patients.html?nameNewSub=${atribute.id}` */
 }
