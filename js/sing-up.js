@@ -45,11 +45,11 @@ console.log('aaaaaa')
   console.log('aaaaaa')  
 
    if(password.value === confPassword.value){  
-   console.log('aaaaaa') 
+
     if(toKnowLegth2[0].length >=8 && toKnowLegth2[1].length >=8){
       await sendingToApi(dataSave);
          window.location.assign("./index.html")
-         console.log('aaaaaa')
+       
     } 
    else{
 window.alert('Senha menor que 8 caracteres, digitar uma senha mais forte!');
